@@ -1,0 +1,88 @@
+.landing-page-container {
+    gap: 24px;
+    margin: 0px 10rem;
+
+    .college-recommendation-wrapper {
+        gap: 24px;
+
+        .college-recommendation-title-text {
+            color: var(--Black-Darker, #000);
+            font-family: "DM Sans";
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .important-text {
+            color: #1B1C1E;
+            font-family: "DM Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        .college-reco-para {
+
+            color: #1B1C1E;
+            font-family: "DM Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+
+
+        }
+
+        .college-reco-tool-title {
+            color: var(--Black-Darker, #000);
+            font-family: "DM Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .college-reco-tool-list-container {
+
+            .tool-list {
+                color: #1B1C1E;
+                font-family: "DM Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+                margin-left: 1rem;
+
+                .tool-list-title {
+                    font-weight: 700;
+                }
+            }
+
+        }
+    }
+
+
+    .year-container {
+        gap: 36px;
+        .year-selection {
+            display: flex;
+            padding: var(--Spacing-space-3, 4px) var(--Spacing-space-7, 12px);
+            align-items: center;
+            gap: 5px;
+            border-radius: var(--radi-6, 18px);
+            border: 1px solid #288FB4;
+            background: #FFF;
+            width: auto;
+            color: #288fb4;
+
+            &:hover{
+                background: #288fb4;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

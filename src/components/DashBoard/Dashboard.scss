@@ -1,0 +1,29 @@
+.dashboard-container {
+    margin: 4rem;
+    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    .cards {
+        display: flex;
+        gap: 4rem;
+    }
+
+    .color-bar-row{
+        width: 30%;
+    }
+
+    .allotment-text{
+        width: 17%;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .color-bar-wrapper {
+        background: #fff;
+        padding: 0.7rem 1rem 1.5rem 1rem;
+        box-shadow: 0px 0px 7px 5px #d1d1d1;
+        width: 100%;
+        border-radius: 12px;
+    }
+}

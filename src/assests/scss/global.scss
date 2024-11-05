@@ -1,0 +1,24 @@
+$primary-color: #3498db;
+$main-header-color: #343537;
+
+$red-color: #b3200d;
+$blue-color: #0275be;
+
+$table-header-color: #a5a6a8;
+
+
+@mixin header-style {
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-family: sans-serif;
+}
+
+@mixin sub-header-style {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,38 @@
+.material-select-dropdown {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: -0.3rem;
+
+    label {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 0.3rem;
+        display: block;
+        position: relative;
+        top: 15px;
+        left: 1rem;
+        background: white;
+        width: fit-content;
+        padding: 0px 5px;
+        border-radius: 12px;
+    
+    }
+
+    select {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s ease;
+        border-radius: 12px;
+
+
+        &:focus {
+            border-color: #3f51b5;
+            /* Material UI primary color */
+            box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+        }
+    }
+}

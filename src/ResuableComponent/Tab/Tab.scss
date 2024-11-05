@@ -1,0 +1,45 @@
+.nav-link {
+    color: #fff !important;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #fff;
+}
+
+.navbar-nav{
+    gap: 64px
+}
+
+.dropdown-item{
+    border-bottom: 1px solid #ccc;
+    padding: 0.7rem 0.3rem 0.7rem 1rem !important;
+    color: #000;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 4rem !important; 
+    border-bottom: 2px solid #ccc !important;
+    border-radius: 10px 10px 0px 0px !important;
+
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+    &:active{
+        border-radius: 0px !important;
+    }
+}
+
+.active {
+    opacity: 1;
+    color: #fff;
+    border-bottom: 3px solid #fff;
+    border-radius: 0px !important;
+}
+
+.dropdown-menu {
+    padding: 0px !important;
+
+}

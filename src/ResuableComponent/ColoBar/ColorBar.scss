@@ -1,0 +1,12 @@
+.color-bar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .color-segment{
+        position: relative;
+        height: 30px;
+        width: 10%;
+    }
+
+}

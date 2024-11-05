@@ -1,0 +1,81 @@
+.material-input {
+  position: relative;
+  margin-top: 1.5rem;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border: none;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: transparent;
+    border-radius: 12px;
+
+    &:focus {
+      box-shadow: none !important; // Remove the default box shadow
+      border: 1px solid #ccc !important;
+    }
+
+    &:hover {
+      box-shadow: none !important; // Remove the default box shadow
+
+    }
+
+    &.is-invalid {
+      box-shadow: none !important; // Remove the default box shadow
+
+    }
+
+    //   &:focus + label,
+    //   &.focused + label {
+    //     color: #6200ea; // Adjust to your theme color
+    //     transform: translateY(-1.5rem);
+    //     font-size: 0.8rem;
+    //   }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+
+  }
+
+  .input-group-text {
+    border: none;
+    background: #fff;
+    position: absolute;
+    top: 6px;
+    right: 3px;
+  }
+
+  label {
+    position: absolute;
+    top: 8px;
+    left: 1rem;
+    font-size: 1rem;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color: white; // for a white background behind label
+    padding: 0 4px;
+  }
+
+  // When the field has focus or content, the label floats above
+  &.focused label {
+    transform: translateY(-1.0rem);
+    font-size: 0.8rem;
+    //   color: #6200ea; // Adjust to your theme color
+  }
+
+
+}
+
+.form-control:focus {
+  border: none !important;
+  outline: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
+}

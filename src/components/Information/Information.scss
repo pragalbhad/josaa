@@ -1,0 +1,47 @@
+@import '../../assests//scss/global.scss';
+
+.information-container{
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    margin: 4rem 0rem;
+    
+    .introduction-container{
+
+        .introduction-title-text{
+            color: $main-header-color;
+            @include header-style;
+        }
+
+        .introduction-title-desc{
+            @include sub-header-style;
+        }
+    }
+
+    .title-text{
+        color: $main-header-color;
+        @include header-style;
+    }
+
+    .title-desc{
+        @include sub-header-style;
+    }
+
+     .admitting-institutes-container{
+
+        .toggle-icon{
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            .active-grid{
+                svg{
+                    path{
+                        fill: blue;
+                    }
+                }
+            }
+        }
+     }
+    
+}
+

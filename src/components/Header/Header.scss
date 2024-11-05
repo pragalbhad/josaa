@@ -1,0 +1,92 @@
+.header-container {
+    .header-row-one {
+        padding: 20px 35px;
+
+        .logo-wrapper {
+            width: 30px;
+            height: 30px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .avatar-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+
+            .user-details {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .user-name {
+                    color: #1B1C1E;
+                    font-family: "DM Sans";
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+                .user-email {
+                    color: #1B1C1E;
+                    font-family: "DM Sans";
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .button-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-end;
+
+           
+        }
+    }
+}
+
+.register-btn,
+.login-btn,
+.signup-btn {
+    border: none;
+    border-radius: 22px;
+    padding: 10px 30px;
+}
+
+.register-btn,
+.login-btn {
+    color: #fff;
+    background: #0275be;
+    border: 1px solid #0275be;
+
+    &:hover {
+        color: #000;
+        background-color: #fff;
+        border: 1px solid #0275be;
+    }
+}
+
+.signup-btn {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #0275be;
+
+    &:hover {
+        color: #fff;
+        background: #0275be;
+    }
+}
+
+.login-text{
+    color: #b3200d;
+    cursor: pointer;
+}

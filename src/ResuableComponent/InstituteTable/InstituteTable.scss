@@ -1,0 +1,16 @@
+.institute-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    .chance-cell {
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  

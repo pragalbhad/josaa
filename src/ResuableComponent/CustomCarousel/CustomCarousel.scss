@@ -1,0 +1,118 @@
+@import '../../assests/scss/global.scss';
+
+.custom-crousel-container {
+    .carousel-main-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 0 2rem; // Add space for arrows on each side
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+
+            .carousel {
+                display: flex;
+                gap: 12px;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                width: 100%;
+                padding: 1rem 0;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .event-item {
+                    flex: 0 0 400px; // Width of each card, adjust as needed
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--Spacing-space-5, 8px);
+                    border: 1px solid #b3200d;
+                    border-radius: 10px;
+                    padding: 2rem 1rem;
+                    background-color: #fff;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    position: relative;
+                    margin-top: 2rem;
+
+                    .video-thumbnail {
+                        position: absolute;
+                        top: -1rem;
+                        left: 17%;
+                        background-color: #b3200d;
+                        color: #fff;
+                        padding: 8px 12px;
+                        border-radius: 10px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                    }
+
+                    .event-content {
+                        border-bottom: 1px solid #ccc;
+
+                        p {
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .event-date {
+                            font-weight: 700;
+                            color: $red-color
+                        }
+                    }
+
+                    .event-content:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .left-chevron {
+        position: absolute;
+        z-index: 9999;
+        top: 8rem;
+        left: -11rem;
+        background: rgb(218, 218, 218);
+        padding: 6rem;
+        opacity: 0.5;
+        border-radius: 78%;
+        visibility: visible;
+
+        svg {
+            width: 2em;
+            height: 2em;
+
+            path {
+                fill: #fff
+            }
+        }
+    }
+
+    .right-chevron {
+        position: absolute;
+        z-index: 9999;
+        top: 8rem;
+        right: -8rem;
+        background: rgb(218, 218, 218);
+        padding: 6rem;
+        opacity: 0.5;
+        border-radius: 78%;
+        visibility: visible;
+
+        svg {
+            width: 2em;
+            height: 2em;
+
+            path {
+                fill: #fff
+            }
+        }
+    }
+}

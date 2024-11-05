@@ -1,0 +1,42 @@
+@import '../../assests/scss/global.scss';
+
+.footer-container {
+    background-color: $blue-color;
+    overflow: hidden;
+
+    .footer-row-one {
+        padding: 20px 35px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+        .logo-wrapper {
+
+            .footer-logo {
+                width: 225px;
+                background: white;
+                padding: 10px;
+            }
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .footer-text {
+            gap: 12px;
+            margin: 1rem 0;
+
+            @include sub-header-style;
+            color: #fff;
+
+        }
+    }
+
+    .footer-row-two {
+        padding: 20px 35px;
+
+        .cc-text{
+            color: #fff;
+        }
+
+    }
+}
