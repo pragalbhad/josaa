@@ -9,7 +9,7 @@ const CustomModal = ({ isOpen, onClose, title, subTitle, children }) => {
 
   return (
     <Modal backdropClassName="modal-backdrop" show={isOpen} onClick={onClose}>
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-container position-relative" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header d-flex flex-row align-items-start">
           <div className="d-flex flex-column">
             <div className="main-title">{title}</div>

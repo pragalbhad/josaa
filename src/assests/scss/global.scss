@@ -8,17 +8,20 @@ $table-header-color: #a5a6a8;
 
 
 @mixin header-style {
-    font-size: 27px;
+    font-family: "Poppins";
+    font-size: 48px;
+    font-weight: normal;
     font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    font-family: sans-serif;
+    text-align: left;
+    color: #0275be;
+
 }
 
 @mixin sub-header-style {
-    font-size: 16px;
+    font-family: "Poppins";
+    font-size: 30px;
+    font-weight: normal;
     font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    font-family: sans-serif;
+    text-align: left;
+    color: #000000;
 }

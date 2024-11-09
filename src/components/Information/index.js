@@ -8,6 +8,7 @@ import NestedColTable from "../../ResuableComponent/NestedColTable";
 import StudentLayout from "../../Pages/Student/StudentLayout";
 import { useDispatch } from "react-redux";
 import { getBlog } from "../../redux/actions/blogAction";
+import StarBGSvg from "../../assests/images/StarBGSvg.png";
 
 const Information = () => {
   const [isGridView, setIsGridView] = useState(false);
@@ -104,18 +105,26 @@ const Information = () => {
     },
   ];
 
-  const dispatch = useDispatch()
-  const {blogData, loadingStateForBlog} = useState((state)=> state?.blogReducer)
-  console.log('%cMyProject%cline:107%cblogData', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(56, 13, 49);padding:3px;border-radius:2px', blogData)
+  const dispatch = useDispatch();
+  const { blogData, loadingStateForBlog } = useState(
+    (state) => state?.blogReducer
+  );
+  console.log(
+    "%cMyProject%cline:107%cblogData",
+    "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
+    "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
+    "color:#fff;background:rgb(56, 13, 49);padding:3px;border-radius:2px",
+    blogData
+  );
 
-  useEffect(()=>{
-    dispatch(getBlog())
-  },[])
-  
+  useEffect(() => {
+    dispatch(getBlog());
+  }, []);
+
   return (
     <StudentLayout>
       <Container className="information-container">
-        <Row className="introduction-container">
+        <Row className="introduction-container position-relative">
           <div className="title-text">Introduction</div>
           <div className="title-desc mt-3">
             The Joint Seat Allocation Authority, also known as JoSAA, is an
@@ -131,6 +140,9 @@ const Information = () => {
           <div className="title-desc">
             Admission to all the academic programs offered by these Institutes
             will be made through a single platform
+          </div>
+          <div className="share-svg position-absolute">
+            <img src={StarBGSvg} alt="StarBGSvg" />
           </div>
         </Row>
 

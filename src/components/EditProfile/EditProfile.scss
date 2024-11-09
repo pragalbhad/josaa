@@ -1,0 +1,126 @@
+.edit-profile {
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 4rem 12rem;
+
+
+    h2 {
+        font-family: "Poppins";
+        font-size: 44px;
+        font-weight: normal;
+        font-style: normal;
+        text-align: left;
+        color: #000000;
+    }
+
+    .edit-profile-form-input-container {
+        display: flex;
+        gap: 9rem;
+        justify-content: space-between;
+        flex-direction: row;
+        margin: 2rem 0px;
+
+        .edit-profile-form-input-label-text {
+            width: 25%;
+            font-family: "Poppins";
+            font-size: 24px;
+            font-weight: 500;
+            font-style: normal;
+            text-align: left;
+            color: #000000;
+        }
+
+        .edit-profile-form-input-fields {
+            // width: 80%;
+            // font-family: "Poppins";
+            // font-size: 24px;
+            // font-weight: 500;
+            // font-style: normal;
+            // text-align: left;
+            // color: #000000;
+
+            font-family: "Poppins";
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            text-align: left;
+            color: #333333;
+            border-radius: 8px !important;
+
+        }
+    }
+
+    .form-group {
+        margin: 1.5rem 0px;
+    }
+
+    .form-control {
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .verified-icon {
+        color: #007bff;
+        font-size: 1.25rem;
+        margin-left: 10px;
+    }
+
+    .form-text {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .form-note {
+        display: block;
+
+        margin-top: 1rem;
+        text-align: center;
+        margin-bottom: 3rem;
+
+        font-family: "Poppins";
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        color: #747474;
+    }
+
+    .update-button {
+        border: none;
+        padding: 0.75rem 8rem;
+        font-size: 18px;
+        color: #fff;
+        font-weight: 500;
+        border-radius: 12px;
+        box-shadow: 8px 7.5px 9px 0px rgba(0, 0, 0, 0.16);
+        background: #b3200d;
+
+        &:hover {
+            background-color: #c9302c;
+        }
+    }
+
+    .edit-profile-verify-btn {
+        position: absolute !important;
+        z-index: 9999 !important;
+        right: 1%;
+        border: none;
+        top: 8%;
+        background: #fff;
+        color: #007bff;
+    }
+
+    .verified-icon {
+        position: absolute !important;
+        z-index: 999999 !important;
+        right: 1%;
+        top: 20%;
+        background: #fff;
+        color: #007bff;
+
+    }
+
+    .non-verified-icon {
+        top: 27%;
+        background-color: none;
+    }
+}

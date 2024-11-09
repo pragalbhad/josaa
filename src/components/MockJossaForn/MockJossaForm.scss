@@ -29,17 +29,26 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
             gap: 22px;
         }
 
-        h1 {
-            font-size: 32px;
-            font-weight: bold;
+        .title-text {
+            // font-size: 32px;
+            // font-weight: bold;
             margin-top: 10px;
         }
 
-        p {
-            font-size: 16px;
-            color: $text-color;
-            text-align: left;
-            margin: 3rem 3rem 3rem 3rem;
+        .title-desc {
+            // font-size: 16px;
+            // color: $text-color;
+            // text-align: left;
+            // margin: 3rem 3rem 3rem 3rem;
+        }
+
+        .share-svg {
+            right: 0px;
+            width: 26%;
+            height: 63%;
+            opacity: 0.3;
+            top: 0px;
+
         }
     }
 
@@ -50,41 +59,51 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
 
             .btn-group {
                 .left-side-btn {
-                  
-                    .exam-type-toggle-btn {
 
-                      
-                    }
+                    .exam-type-toggle-btn {}
                 }
 
                 .right-side-btns {
                     display: flex;
                     gap: 18px;
 
-                    .add-institute-btn{
+                    .add-institute-btn {
                         border: none;
-                        border: 1px solid $primary-btn-color;
-                        background-color: $primary-btn-color;
-                        color: #fff;
-                        border-radius: 2rem;
                         padding: 0rem 2rem;
+                        font-family: "Segoe UI";
+                        font-size: 18px;
+                        font-weight: normal;
+                        font-style: normal;
+                        text-align: left;
+                        color: #ffffff;
 
-                        &:hover{
+                        border-radius: 42px;
+
+
+                        background: #b3200d;
+
+                        &:hover {
                             color: $primary-btn-color;
                             background-color: #fff;
+                            border: 1px solid #b3200d;
                         }
                     }
 
-                    .save-export-btn{
+                    .save-export-btn {
                         border: none;
-                        border: 1px solid $secondary-btn-color;
-                        background-color: $secondary-btn-color;
-                        color: #fff;
-                        border-radius: 2rem;
+                        border: 1px solid #0275be;
                         padding: 0rem 2rem;
+                        border-radius: 42px;
+                        background: #0275be;
+                        font-family: "Segoe UI";
+                        font-size: 18px;
+                        font-weight: normal;
+                        font-style: normal;
+                        text-align: left;
+                        color: #ffffff;
 
-                        &:hover{
-                            color: $secondary-btn-color;
+                        &:hover {
+                            color: #0275be;
                             background-color: #fff;
                         }
                     }
@@ -97,37 +116,49 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
     }
 }
 
-.action-btns{
-    border:none;
+.action-btns {
+    border: none;
     display: flex;
     gap: 5px;
-    border-radius: 20px;
+    border-radius: 8px;
     align-items: center;
     justify-content: center;
-} 
-.remove-btn{
+
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+    color: #ffffff;
+    padding: 8px;
+
+}
+
+.remove-btn {
     background: #b3200d;
     color: #fff;
-    &:hover{
+
+    &:hover {
         color: #b3200d;
         background: #fff;
     }
 }
 
-.up-btn{
+.up-btn {
     background: #53a24c;
     color: #fff;
-    &:hover{
+
+    &:hover {
         background: #fff;
         color: #53a24c;
     }
 }
 
-.down-btn{
+.down-btn {
     background: #ffc831;
     color: #fff;
 
-    &:hover{
+    &:hover {
         background: #fff;
         color: #ffc831;
     }

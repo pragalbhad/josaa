@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import "./LandingPage.scss";
 import ScheduleTable from "../../ResuableComponent/ScheduleTable";
 import CustomModal from "../../ResuableComponent/CustomModal";
 import StudentLayout from "../Student/StudentLayout";
+import Button from "../../ResuableComponent/Button";
+import FilterDropdown from "../../ResuableComponent/FilterDropdown";
 
 const headers = [
   { label: "Institute", key: "institute" },
@@ -60,34 +62,33 @@ const sampleData = [
 ];
 
 const CollegeRecommendation = () => {
+  const [selectedFilter, setSelectedFilter] = useState("Filter one");
+
+  const handleSelect = (option) => {
+    setSelectedFilter(option);
+  };
+
   return (
     <StudentLayout>
       <Container fluid className="landing-page-container d-flex flex-column">
         <Row className="college-recommendation-wrapper m-0 p-0 mt-4">
-          <div className="college-recommendation-title-text">
-            College Recommendations
+          <div className="title-text">College Recommendations</div>
+
+          <div className="title-desc">
+            Introducing our College Recommendations tool, designed to help you
+            make informed decisions about your college admissions. Utilizing
+            data from the last 6-7 years, this tool projects the closing ranks
+            for 2024 and provides a personalized list of colleges and academic
+            programs you can target based on your rank. Whether you're aiming
+            for top IITs, NITs, IIITs, or other prestigious engineering
+            colleges, our tool ensures you have the insights needed to
+            strategize your preferences effectively.
           </div>
 
-          <div className="college-reco-para">
-            Introducing our{" "}
-            <span className="important-text">College Recommendations</span>{" "}
-            tool, designed to help you make informed decisions about your{" "}
-            <span className="important-text">college admissions</span>.
-            Utilizing data from the last 6-7 years, this tool projects the
-            closing ranks for 2024 and provides a personalized list of{" "}
-            <span className="important-text">colleges</span> and{" "}
-            <span className="important-text">academic programs</span> you can
-            target based on your rank. Whether you're aiming for top IITs, NITs,
-            IIITs, or other prestigious{" "}
-            <span className="important-text">engineering</span> colleges, our
-            tool ensures you have the insights needed to strategize your
-            preferences effectively.{" "}
-          </div>
-
-          <div className="college-reco-tool-title">
+          <div className="college-reco-tool-title title-desc">
             Why Use the College Recommendations Tool?
           </div>
-          <ul className="college-reco-tool-list-container">
+          <ul className="college-reco-tool-list-container title-desc">
             <li className="tool-list">
               <span className="tool-list-title"> Data-Driven Insights: </span>
               Leverage historical data to get accurate projections of closing
@@ -123,29 +124,39 @@ const CollegeRecommendation = () => {
             </li>
           </ul>
 
-          <div className="college-reco-tool-title">How It Works</div>
-          <ul className="college-reco-tool-list-container">
+          <div className="college-reco-tool-title title-desc">How It Works</div>
+          <ul className="college-reco-tool-list-container title-desc">
             <li className="tool-list">
-              <span className="tool-list-title"> Input Your Rank</span>: Enter
-              your expected or actual rank from JEE Main or JEE Advanced.
+              <span className="tool-list-title title-desc">
+                {" "}
+                Input Your Rank
+              </span>
+              : Enter your expected or actual rank from JEE Main or JEE
+              Advanced.
               <span></span>
             </li>
-            <li className="tool-list">
-              <span className="tool-list-title">Get Projections</span>
+            <li className="tool-list title-desc">
+              <span className="tool-list-title title-desc">
+                Get Projections
+              </span>
               <span>
                 : Our tool analyzes historical data to project the closing ranks
                 for 2024.
               </span>
             </li>
-            <li className="tool-list">
-              <span className="tool-list-title">View Recommendations</span>
+            <li className="tool-list title-desc">
+              <span className="tool-list-title title-desc">
+                View Recommendations
+              </span>
               <span>
                 : Receive a curated list ofcolleges and academic programs that
                 align with your rank and preferences.
               </span>
             </li>
-            <li className="tool-list">
-              <span className="tool-list-title">Make Informed Choices</span>
+            <li className="tool-list title-desc">
+              <span className="tool-list-titl title-desce">
+                Make Informed Choices
+              </span>
               <span>
                 : Use the recommendations to strategically fill out your JoSAA
                 counselling choices and maximize your chances of admission to
@@ -154,30 +165,44 @@ const CollegeRecommendation = () => {
             </li>
           </ul>
 
-          <div className="college-reco-para">
-            Take control of your{" "}
-            <span className="important-text">college admissions</span> journey
-            with our{" "}
-            <span className="important-text">College Recommendations</span>{" "}
-            tool, designed to provide you with the insights and guidance needed
-            to make the best decisions for your academic future. Explore the
-            possibilities and plan your path to success with confidence.
+          <div className="college-reco-para title-desc">
+            Take control of your college admissions journey with our College
+            Recommendations tool, designed to provide you with the insights and
+            guidance needed to make the best decisions for your academic future.
+            Explore the possibilities and plan your path to success with
+            confidence.
           </div>
         </Row>
 
         <Row className="year-container mt-5 p-0">
-          <div className="year-selection">Mains 2024</div>
+          <div className="d-flex gap-3 w-50">
+            <div className="year-selection">Mains 2024</div>
 
-          <div className="year-selection">Mains 2024</div>
+            <div className="year-selection">Mains 2024</div>
 
-          <div className="year-selection">Mains 2024</div>
+            <div className="year-selection">Mains 2024</div>
 
-          <div className="year-selection">Mains 2024</div>
-
-          <div className="container">
-            <ScheduleTable data={sampleData} />
+            <div className="year-selection">Mains 2024</div>
+          </div>
+          <div className="w-50 filter-container">
+            {/* <Button label="filter" className={"filter-btn"} /> */}
+            <FilterDropdown
+              options={[
+                "Filter one",
+                "Filter two",
+                "Filter three",
+                "Filter four",
+                "Filter five",
+              ]}
+              selected={selectedFilter}
+              onSelect={handleSelect}
+            />
           </div>
         </Row>
+
+        <div className="container">
+          <ScheduleTable data={sampleData} />
+        </div>
       </Container>
     </StudentLayout>
   );

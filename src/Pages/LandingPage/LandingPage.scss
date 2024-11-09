@@ -1,17 +1,17 @@
 .landing-page-container {
     gap: 24px;
-    margin: 0px 10rem;
+    // margin: 0px 10rem;
 
     .college-recommendation-wrapper {
         gap: 24px;
 
         .college-recommendation-title-text {
             color: var(--Black-Darker, #000);
-            font-family: "DM Sans";
-            font-size: 27px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
+            // font-family: "DM Sans";
+            // font-size: 27px;
+            // font-style: normal;
+            // font-weight: 700;
+            // line-height: normal;
         }
 
         .important-text {
@@ -25,38 +25,39 @@
 
         .college-reco-para {
 
-            color: #1B1C1E;
-            font-family: "DM Sans";
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 24px;
+            // color: #1B1C1E;
+            // font-family: "DM Sans";
+            // font-size: 16px;
+            // font-style: normal;
+            // font-weight: 500;
+            // line-height: 24px;
 
 
         }
 
         .college-reco-tool-title {
-            color: var(--Black-Darker, #000);
-            font-family: "DM Sans";
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
+            // color: var(--Black-Darker, #000);
+            // font-family: "DM Sans";
+            // font-size: 16px;
+            // font-style: normal;
+            // font-weight: 700;
+            // line-height: normal;
         }
 
         .college-reco-tool-list-container {
+            margin-left: 2.5rem;
 
             .tool-list {
-                color: #1B1C1E;
-                font-family: "DM Sans";
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 24px;
-                margin-left: 1rem;
+                // color: #1B1C1E;
+                // font-family: "DM Sans";
+                // font-size: 16px;
+                // font-style: normal;
+                // font-weight: 500;
+                // line-height: 24px;
+                // margin-left: 1rem;
 
                 .tool-list-title {
-                    font-weight: 700;
+                    // font-weight: 700;
                 }
             }
 
@@ -65,24 +66,43 @@
 
 
     .year-container {
-        gap: 36px;
+
         .year-selection {
             display: flex;
             padding: var(--Spacing-space-3, 4px) var(--Spacing-space-7, 12px);
             align-items: center;
             gap: 5px;
-            border-radius: var(--radi-6, 18px);
-            border: 1px solid #288FB4;
+            border: 3px solid #0275be;
             background: #FFF;
             width: auto;
             color: #288fb4;
+            border-radius: 42px;
 
-            &:hover{
+            font-family: "Segoe UI";
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            text-align: left;
+            color: #0275be;
+
+            &:hover {
                 background: #288fb4;
                 color: #fff;
                 cursor: pointer;
             }
         }
+
+        .filter-btn{
+
+        }
+    }
+
+    .w-50{
+        width: 50%;
+    }
+
+    .filter-container{
+        text-align: right;
     }
 
 }

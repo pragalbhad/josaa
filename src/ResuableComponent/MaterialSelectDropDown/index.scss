@@ -22,17 +22,21 @@
     select {
         padding: 10px;
         font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
         outline: none;
         transition: border-color 0.3s ease;
-        border-radius: 12px;
 
+        border-color: #afafaf;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 8px;
+        background: #ffffff;
 
         &:focus {
-            border-color: #3f51b5;
-            /* Material UI primary color */
-            box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+            border-color: #afafaf;
         }
     }
+}
+
+.material-select-dropdown select:focus{
+    border-color: #afafaf;
 }

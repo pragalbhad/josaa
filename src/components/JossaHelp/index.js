@@ -3,6 +3,8 @@ import "./Jossahelp.scss";
 import StudentLayout from "../../Pages/Student/StudentLayout";
 import helpcard1 from "../../assests/images/helpcard1.png";
 import helpcard2 from "../../assests/images/helpcard2.png";
+import StartUpWardSvg from "../../assests/images/StarUpWardSvg.png";
+import StartBottomRightSvg from "../../assests/images/StartBottomRightSvg.png";
 
 const JossaHelp = () => {
   const [showFirstCard, setShowFirstCard] = useState(false);
@@ -21,7 +23,15 @@ const JossaHelp = () => {
   return (
     <div className="jossa-help">
       <header className="header text-center">
-        <div className="main-header-container">
+        <div className="main-header-container position-relative">
+          <div className="share-svg top-left position-absolute">
+            <img src={StartUpWardSvg} alt="StartUpWardSvg" />
+          </div>
+
+          <div className="share-svg bottom-right-svg position-absolute">
+            <img src={StartBottomRightSvg} alt="StartUpWardSvg" />
+          </div>
+
           <h2>Why use JoSAA Help?</h2>
           <h1>
             Welcome to JoSAAHelp.in - Your Ultimate College Preference Tool!

@@ -33,7 +33,7 @@ function Register() {
     gender: "",
     know_from: "",
     password: "",
-    confirm_assword: "",
+    confirm_password: "",
     accept_terms: false,
   });
 
@@ -55,19 +55,22 @@ function Register() {
     const newErrors = {};
 
     if (!formData.name) newErrors.name = "Name is required";
+
     if (!formData.email) newErrors.email = "Email is required";
+
     else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Email is invalid";
 
-    if (!formData.phone) newErrors.phone = "Phone is required";
-    else if (!/^\d{10}$/.test(formData.phone))
-      newErrors.phone = "Enter a valid 10-digit phone number";
+    if (!formData.mobile) newErrors.mobile = "Phone is required";
 
-    if (!formData.seatType) newErrors.seatType = "Seat Type is required";
+    else if (!/^\d{10}$/.test(formData.mobile))
+      newErrors.mobile = "Enter a valid 10-digit phone number";
+
+    if (!formData.seat_type) newErrors.seat_type = "Seat Type is required";
     if (!formData.state) newErrors.state = "State is required";
     if (!formData.city) newErrors.city = "City is required";
     if (!formData.gender) newErrors.gender = "Gender is required";
-    if (!formData.josaaHelp) newErrors.josaaHelp = "This field is required";
+    if (!formData.know_from) newErrors.know_from = "This field is required";
 
     if (!formData.password) {
       newErrors.password = "Password is required";
@@ -92,24 +95,24 @@ function Register() {
         );
 
       if (passwordErrors.length > 0) {
-        newErrors.password = passwordErrors.join(" | ");
+        newErrors.password = passwordErrors.join("\n");
       }
     }
 
-    if (!formData.confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password";
-    } else if (formData.confirmPassword !== formData.password) {
-      newErrors.confirmPassword = "Passwords do not match";
+    if (!formData.confirm_password) {
+      newErrors.confirm_password = "Please confirm your password";
+    } else if (formData.confirm_password !== formData.password) {
+      newErrors.confirm_password = "Passwords do not match";
     }
 
-    if (!formData.acceptTerms)
-      newErrors.acceptTerms = "You must accept the terms and conditions";
+    if (!formData.accept_terms)
+      newErrors.accept_terms = "You must accept the terms and conditions";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       console.log("Form submitted successfully", formData);
@@ -171,10 +174,10 @@ function Register() {
           onChange={handleChange}
           options={[
             { label: "General", value: "General" },
-            { label: "EWS", value: 1 },
-            { label: "OBC", value: 2 },
-            { label: "SC", value: 4 },
-            { label: "ST", value: 5 },
+            { label: "1", value: 1 },
+            { label: "2", value: 2 },
+            { label: "3", value: 3 },
+            { label: "4", value: 4 },
           ]}
           error={errors.seat_type}
           isInvalid={!!errors.seat_type}
@@ -186,9 +189,11 @@ function Register() {
           value={formData.state}
           onChange={handleChange}
           options={[
-            { label: "Male", value: "Male" },
-            { label: "Female", value: "Female" },
-            { label: "Other", value: "Other" },
+            { label: "Gurgaon", value: "Gurgaon" },
+            { label: "Delhi", value: "Delhi" },
+            { label: "Noida", value: "Noida" },
+            { label: "Patna", value: "Patna" },
+            { label: "Greader Noida", value: "Greader Noida" },
           ]}
           error={errors.state}
           isInvalid={!!errors.state}
@@ -200,11 +205,11 @@ function Register() {
           value={formData.city}
           onChange={handleChange}
           options={[
-            { label: "General", value: "General" },
-            { label: "EWS", value: "EWS" },
-            { label: "OBC", value: "OBC" },
-            { label: "SC", value: "SC" },
-            { label: "ST", value: "ST" },
+            { label: "Gurgaon", value: "Gurgaon" },
+            { label: "Delhi", value: "Delhi" },
+            { label: "Noida", value: "Noida" },
+            { label: "Patna", value: "Patna" },
+            { label: "Greader Noida", value: "Greader Noida" },
           ]}
           error={errors.city}
           isInvalid={!!errors.city}
@@ -251,11 +256,11 @@ function Register() {
 
         <MaterialStyledInput
           label="Confirm Password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
+          name="confirm_password"
+          value={formData.confirm_password}
           onChange={handleChange}
-          error={errors.confirmPassword}
-          isInvalid={!!errors.confirmPassword}
+          error={errors.confirm_password}
+          isInvalid={!!errors.confirm_password}
           type="password"
         />
 
@@ -267,10 +272,10 @@ function Register() {
               <span className="text-decoration-underline">privacy policy</span>
             </span>
           }
-          name="acceptTerms"
-          checked={formData.acceptTerms}
+          name="accept_terms"
+          checked={formData.accept_terms}
           onChange={handleChange}
-          isInvalid={!!errors.acceptTerms}
+          isInvalid={!!errors.accept_terms}
           className="mt-3"
         />
 
@@ -287,34 +292,3 @@ function Register() {
 }
 
 export default Register;
-
-// const handleSubmit = async () => {
-//   const url = `${process.env.REACT_APP_BASE_URL}registration.php`; // Make sure REACT_APP_BASE_URL is defined in .env
-
-//   const requestBody = {
-//     name: "Pragalbh",
-//     email: "pragalbh@gmail.com",
-//     mobile: "0987654321",
-//     city: "New Delhi",
-//     state: "Delhi",
-//     password: "Pragalbh@09",
-//     gender: "Male",
-//     seat_type: "1",
-//     know_from: "Pragalbh",
-//   };
-
-//   try {
-//     const res = await axios.post(url, requestBody, {
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     });
-
-//     // Get the token from response and store it if needed
-//     const token = res.data?.data?.token;
-//     setResponse(res.data);
-//     console.log("Token:", token);
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// };

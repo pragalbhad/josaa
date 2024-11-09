@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const isSignUpModalOpen = useSelector(
@@ -46,12 +46,11 @@ const Header = () => {
   }, [signInData, token]);
 
   useEffect(() => {
-      dispatch(getProfile());
+    dispatch(getProfile());
   }, [dispatch, token]);
 
-
   const handleOptionSelect = (option) => {
-    navigate(`/${option.label}`)
+    navigate(`/${option.label}`);
     console.log(`Selected: ${option.label}`);
   };
 
@@ -65,13 +64,13 @@ const Header = () => {
 
   const menuOptions = [
     { label: "Dashboard", link: "/dashboard", startIcon: <RxDashboard /> },
-    { label: "Exam Details", link: "/settings", startIcon: <FaBook /> },
-    { label: "Profile", link: "/logout", startIcon: <FaRegAddressCard /> },
+    { label: "Exam Details", link: "/examdetails", startIcon: <FaBook /> },
+    { label: "Profile", link: "/editprofile", startIcon: <FaRegAddressCard /> },
     { label: "Logout", link: "/logout", startIcon: <FaSignOutAlt /> },
   ];
 
   const tabs = [
-    { label: "Home", link: "/" },
+    { label: "HOME", link: "/" },
     {
       label: "Information",
       dropdown: [
@@ -86,13 +85,13 @@ const Header = () => {
         { label: "Recommendations", link: "/recommendations" },
       ],
     },
-    { label: "News & Events", link: "/news" },
-    { label: "Contact Us", link: "/contact" },
+    { label: "NEWS & EVENTS", link: "/news" },
+    { label: "CONTACT US", link: "/contact" },
   ];
 
   return (
     <Container fluid className="header-container">
-      <Row className="header-row-one d-flex flex-row col-12 w-100 m-0">
+      <Row lg={12} className="header-row-one d-flex flex-row col-12 w-100 m-0">
         <Col className="logo-wrapper">
           <img src={light} alt="logo" />
         </Col>

@@ -3,7 +3,7 @@ $secondary-color: #666;
 $text-color: #555;
 $bg-color: #57c6bf;
 $card-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-$header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdAsk2GmumcGWZ2qklmV74hKlNmznSx.jpg');
+$header-bg-image: url('../../assests/images/JosaaForm1.png');
 
 @keyframes slideInRight {
     from {
@@ -51,21 +51,44 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
         }
 
         h2 {
-            font-size: 24px;
+            font-family: "Poppins";
+            font-size: 50px;
+            font-weight: normal;
+            font-style: normal;
+            color: #ffffff;
         }
 
         h1 {
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 10px;
+            font-family: "Poppins";
+            font-size: 55px;
+            font-weight: 500;
+            font-style: normal;
+            text-align: center;
+            color: #ffffff;
         }
 
         p {
-            font-size: 16px;
-            color: $text-color;
-            text-align: left;
             margin: 3rem 3rem 3rem 3rem;
+
+            font-family: "Poppins";
+            font-size: 28px;
+            font-weight: normal;
+            font-style: normal;
+            text-align: left;
+            color: #333333;
         }
+
+        .top-left{
+            opacity: 0.7;
+        }
+
+        .bottom-right-svg{
+            top: auto;
+            bottom: 5%;
+            right: 10%;
+            opacity: 0.7;
+        }
+
     }
 
     .divider {
@@ -81,8 +104,11 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
         gap: 22px;
 
         h3 {
-            font-size: 24px;
-            font-weight: bold;
+            font-family: "Poppins";
+            font-size: 40px;
+            font-weight: 500;
+            font-style: normal;
+            color: #333333;
         }
 
         .help-card-container {
@@ -92,13 +118,13 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
 
             .help-card {
                 background-color: $bg-color;
-                border-radius: 8px;
-                max-width: 500px;
+                border-radius: 24px;
+                max-width: 650px;
                 box-shadow: $card-shadow;
                 border: 1px solid #a1a0a0;
                 // opacity: 0; 
-                transform: translateX(100%); 
-                animation: slideInRight 0.5s ease forwards; 
+                transform: translateX(100%);
+                animation: slideInRight 0.5s ease forwards;
 
                 &.slide-in {
                     animation: slideInRight 0.5s ease forwards;
@@ -109,29 +135,39 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
                     zoom: 0.9;
                     background: #a4efea;
                     margin-top: -15px;
-                    animation: shrink 0.3s ease forwards; 
+                    animation: shrink 0.3s ease forwards;
                 }
 
                 .help-card-header {
                     padding: 20px;
 
                     h4 {
-                        font-size: 20px;
-                        color: #fff;
+                        font-family: "Poppins";
+                        font-size: 40px;
+                        font-weight: 500;
+                        font-style: normal;
+                        color: #ffffff;
                     }
                 }
 
                 .help-card-body {
                     p {
-                        color: #fff;
-                        font-size: 13px;
                         padding: 0px 2rem;
+                        border-radius: 24px;
+
+                        font-family: "Poppins";
+                        font-size: 24px;
+                        font-weight: normal;
+                        font-style: normal;
+                        text-align: center;
+                        color: #fafafa;
                     }
 
                     .help-card-image {
                         margin-top: 15px;
                         width: 100%;
                         height: 260px;
+                        border-radius: 0px 0px 24px 24px;
                     }
                 }
             }

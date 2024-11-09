@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import "./Home.scss";
-import JoSAAHelp from "../../assests/images/josaahelp.png";
-import JoSAAHelpFlow from "../../assests/images/JoSAAHelpFlow.png";
+import Home1 from "../../assests/images/Home1.png";
+import JEEFlow from "../../assests/images/JEEFlow.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNews } from "../../redux/actions/newsAction";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { getCollegeTrends } from "../../redux/actions/collegeTrendsAction";
-import NestedColTable from "../../ResuableComponent/NestedColTable";
 import { getExams } from "../../redux/actions/getExamsAction";
 
 const scheduleData = [
@@ -68,7 +67,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getCollegeTrends());
-    dispatch(getExams())
+    dispatch(getExams());
   }, []);
 
   return (
@@ -78,16 +77,16 @@ const Home = () => {
         <Card.Body>
           <span className="announcement-label">ANNOUNCEMENT</span>
           <p className="announcement-text">
-            Rankings have been ANNOUNCED! Now is the perfect time to discover
-            which institute and academic program you could secure based on your
-            JEE MAINS 2024 results. Sign up to learn more!
+            Rankings HAVE BEEN ANNOUNCED! NOW IS THE PERFECT TIME TO DISCOVER
+            WHICH INSTITUTE AND ACADEMIC PROGRAM YOU COULD SECURE BASED ON YOUR
+            JEE MAINS 2024 RESULTS. SIGN UP TO LEARN MORE!
           </p>
         </Card.Body>
       </Card>
 
       {/* Welcome Section */}
       <Row className="welcome-section">
-        <Col md={8}>
+        <Col md={6}>
           <h2>Welcome to JoSSA Help</h2>
           <p className="welcome-text">
             Your go-to resource for navigating the complex world of admissions
@@ -99,9 +98,9 @@ const Home = () => {
             Know More
           </Button>
         </Col>
-        <Col md={4}>
+        <Col md={6}>
           <img
-            src={JoSAAHelp} 
+            src={Home1}
             alt="Student writing exam"
             className="welcome-image"
           />
@@ -118,15 +117,15 @@ const Home = () => {
         <Row className="news-events-section">
           {/* News Cards */}
 
-          <Col className="news-cards d-flex flex-column" lg={8}>
-            <Col md={7} className="news-card">
+          <Col className="news-cards d-flex flex-column" lg={5}>
+            <Col md={12} className="news-card">
               <div className="news-card-content">
                 <div>
-                {newsItems.data &&
-                  newsItems.data
-                    .filter((i) => i.tag === "New") 
-                    .map((i) => (
-                        <ul  key={i.id}>
+                  {newsItems.data &&
+                    newsItems.data
+                      .filter((i) => i.tag === "New")
+                      .map((i) => (
+                        <ul key={i.id}>
                           <li>
                             {/* JEE (Mains) Session-2 will be conducted on
                             <br />
@@ -147,14 +146,12 @@ const Home = () => {
                           </li> */}
                         </ul>
                       ))}
-                      <div className="read-more cursor-pointer">
-                          View More
-                        </div>
-                      </div>
+                  <div className="read-more cursor-pointer">View More</div>
+                </div>
               </div>
             </Col>
 
-            <Col md={7} className="news-card">
+            <Col md={12} className="news-card">
               <div className="news-card-header d-flex justify-content-between">
                 <h4>About JoSAAHelp.in</h4>
                 <div className="right-chevron">
@@ -173,7 +170,7 @@ const Home = () => {
               </div>
             </Col>
 
-            <Col md={7} className="news-card">
+            <Col md={12} className="news-card">
               <div className="news-card-header d-flex justify-content-between">
                 <h4>JoSAA Information</h4>
                 <div className="right-chevron">
@@ -206,9 +203,9 @@ const Home = () => {
           </Col> */}
           </Col>
 
-          <Col lg={4}>
+          <Col lg={7}>
             <img
-              src={JoSAAHelpFlow}
+              src={JEEFlow}
               alt="JoSAAHelpFlow"
               className="welcome-image"
               style={{ width: "100%", height: "100%" }}

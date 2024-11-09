@@ -15,7 +15,7 @@ function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    acceptTerms: false,
+    remember_me: false,
   });
 
   const [errors, setErrors] = useState({});
@@ -45,45 +45,41 @@ function Login() {
 
   const validateForm = () => {
     const newErrors = {};
-
-    if (!formData.name) newErrors.name = "Name is required";
+  
     if (!formData.email) newErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Email is invalid";
-
+  
+    const passwordErrors = [];
+  
     if (!formData.password) {
       newErrors.password = "Password is required";
-
-      const passwordErrors = [];
+    } else {
       if (formData.password.length < 8)
         passwordErrors.push("Password must be at least 8 characters");
       if (!/[A-Z]/.test(formData.password))
-        passwordErrors.push(
-          "Password must contain at least one uppercase letter"
-        );
+        passwordErrors.push("Password must contain at least one uppercase letter");
       if (!/[a-z]/.test(formData.password))
-        passwordErrors.push(
-          "Password must contain at least one lowercase letter"
-        );
+        passwordErrors.push("Password must contain at least one lowercase letter");
       if (!/[0-9]/.test(formData.password))
         passwordErrors.push("Password must contain at least one number");
       if (!/[!@#$%^&*]/.test(formData.password))
-        passwordErrors.push(
-          "Password must contain at least one special character"
-        );
-
+        passwordErrors.push("Password must contain at least one special character");
+  
       if (passwordErrors.length > 0) {
-        newErrors.password = passwordErrors.join(" | ");
+        newErrors.password = passwordErrors.join("\n");
       }
     }
-
+  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
+      console.log('hogya validate')
       dispatch(
         loginUser(formData.email, formData.password, formData.rememberMe)
       );
@@ -98,6 +94,7 @@ function Login() {
 
   const handleClose = () => {
     dispatch(toggleSignUpModal(false));
+    dispatch(toggleSignIn(false));
   };
 
   const handleRegister = () => {
@@ -130,19 +127,22 @@ function Login() {
           error={errors.password}
           isInvalid={!!errors.password}
           type="password"
+          FormHelperTextProps={{
+            className: "material-error-message",
+          }}
         />
 
         <Form.Check
           type="checkbox"
           label="Keep me logged in"
-          name="rememberMe"
-          checked={formData.rememberMe}
+          name="remember_me"
+          checked={formData.remember_me}
           onChange={handleChange}
-          isInvalid={!!errors.rememberMe}
-          className="mt-3"
+          isInvalid={!!errors.remember_me}
+          className="mt-3 remember-me"
         />
-        {errors.rememberMe && (
-          <div className="text-danger">{errors.rememberMe}</div>
+        {errors.remember_me && (
+          <div className="text-danger">{errors.remember_me}</div>
         )}
 
         <button onClick={handleSubmit} className="register-btn w-100 mt-4">

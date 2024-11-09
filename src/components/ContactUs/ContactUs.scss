@@ -1,0 +1,126 @@
+.contact-us {
+    padding: 2rem 1rem;
+
+    .chat-box {
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+
+        .user-message,
+        .ai-message {
+            margin-bottom: 1.5rem;
+        }
+
+        .user-font-style {
+            font-family: "Poppins";
+            font-size: 32px;
+            font-weight: 500;
+            font-style: normal;
+            text-align: left;
+            color: #000000;
+        }
+
+        .user-desc {
+            font-family: "Poppins";
+            font-size: 28px;
+            font-weight: 300;
+            font-style: normal;
+            text-align: left;
+            color: #1f1f1f;
+            width: 80%;
+        }
+
+        .ai-font-style {
+            font-family: "Poppins";
+            font-size: 32px;
+            font-weight: 500;
+            font-style: normal;
+            text-align: left;
+            color: #0275be;
+        }
+
+        .ai-desc {
+            font-family: "Poppins";
+            font-size: 28px;
+            font-weight: 300;
+            font-style: normal;
+            text-align: left;
+            color: #1f1f1f;
+            width: 80%;
+        }
+
+        .time-text {
+            font-family: "Poppins";
+            font-size: 18px;
+            font-weight: 300;
+            font-style: normal;
+            text-align: left;
+            color: #979797;
+        }
+    }
+
+    .contact-btn-container {
+        display: flex;
+        gap: 2rem;
+
+        .copy-btn {
+            border-color: #1f1f1f;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 20px;
+            background: #ffffff;
+
+            color: #1f1f1f;
+            font-family: "Poppins";
+            font-size: 16px;
+            font-weight: 300;
+            font-style: normal;
+            text-align: left;
+            color: #1f1f1f;
+
+            padding: 0.5rem 1rem;
+
+            &::placeholder {
+                font-family: "Poppins";
+                font-size: 16px;
+                font-weight: normal;
+                font-style: normal;
+                text-align: left;
+                color: #333333;
+            }
+
+
+            span {
+                margin-right: 0.2rem;
+            }
+        }
+
+
+    }
+
+    .query-textarea {
+        margin-top: 2rem;
+        border: 1px solid #afafaf;
+        border-radius: 8px;
+        background: #ffffff;
+
+        textarea {
+            border: none;
+            outline: none;
+            width: 95%;
+            resize: none;
+            outline: none;
+            padding: 1rem 0px 1rem 1rem;
+        }
+
+        .query-share-svg {
+            border-radius: 4px;
+            background: #0275be;
+            padding: 0.5rem;
+            top: 10%;
+            right: 1%;
+            color: #ffffff;
+
+        }
+    }
+}

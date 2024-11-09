@@ -27,6 +27,7 @@ export const registerUser = (requestBody) => async (dispatch) => {
       type: "REGISTER_SUCCESS",
       payload: { data: response.data, token },
     });
+    dispatch(getProfile())
   } catch (error) {
     dispatch({
       type: "REGISTER_FAILURE",
@@ -35,7 +36,7 @@ export const registerUser = (requestBody) => async (dispatch) => {
   }
 };
 
-export const loginUser = (email, password, rememberMe) => async (dispatch) => {
+export const loginUser = (email, password, remember_me) => async (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
 
   try {
@@ -45,8 +46,8 @@ export const loginUser = (email, password, rememberMe) => async (dispatch) => {
       { email, password },
       { headers: { "Content-Type": "application/json" } }
     );
-    const successMessage = response?.message || "Login successful!";
 
+    const successMessage = response?.message || "Login successful!";
     const token = response?.data?.data?.token;
 
     dispatch({
@@ -54,7 +55,7 @@ export const loginUser = (email, password, rememberMe) => async (dispatch) => {
       payload: { data: response.data, token },
     });
 
-    localStorage.setItem("authToken", response?.data?.data?.token )
+    localStorage.setItem("authToken", token);
     showSuccessToast(successMessage);
 
     dispatch({
@@ -64,15 +65,17 @@ export const loginUser = (email, password, rememberMe) => async (dispatch) => {
 
   } catch (error) {
     const errorMessage =
-      error?.message || "Login failed. Please check your credentials.";
+      error.response?.data?.message || error.message || "Login failed. Please check your credentials.";
+
     dispatch({
       type: LOGIN_FAILURE,
-      payload: error.message,
+      payload: errorMessage,
     });
 
     showErrorToast(errorMessage);
   }
 };
+
 
 
 export const logout = () => {

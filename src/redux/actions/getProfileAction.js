@@ -11,11 +11,13 @@ export const getProfile = () => async (dispatch) => {
 
   try {
     const url = `${process.env.REACT_APP_BASE_URL}get_profile.php`;
+    
+    const token  = localStorage.getItem("authToken") || process.env.REACT_APP_TOKEN
+
     const response = await axios.get(url, {
       headers: {
         "Content-Type": "application/json",
-        // Include any required authorization headers if needed
-        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        Authorization: `Bearer ${token}`,
       },
     });
 

@@ -14,16 +14,19 @@ import CollegeRecommendation from "./Pages/LandingPage";
 import Dashboard from "./components/DashBoard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Container } from "react-bootstrap";
+import ContactUs from "./components/ContactUs";
+import EditProfile from "./components/EditProfile";
+import ExamsDetail from "./components/ExamsDetail";
 
 function App() {
   const role = useSelector((state) => state.auth.role);
 
   return (
-    <>
+    <Container fluid className="app m-0 p-0">
 
       <Router>
       <Header />
-
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
 
@@ -36,6 +39,9 @@ function App() {
             <Route path="/jossaHelp" element={<JossaHelp />} />
             <Route path="/mockJossaForm" element={<MockJossaForm />} />
             <Route path="/Information" element={<Student />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/editprofile" element={<EditProfile />} />
+            <Route path="/examdetails" element={<ExamsDetail />} />
             <Route
               path="/recommendations"
               element={<CollegeRecommendation />}
@@ -52,7 +58,7 @@ function App() {
       </Router>
 
       <Footer />
-    </>
+    </Container>
   );
 }
 

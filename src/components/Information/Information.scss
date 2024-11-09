@@ -1,47 +1,68 @@
 @import '../../assests//scss/global.scss';
 
-.information-container{
+.information-container {
     display: flex;
     gap: 3rem;
     flex-direction: column;
     margin: 4rem 0rem;
-    
-    .introduction-container{
 
-        .introduction-title-text{
+    .introduction-container {
+
+        .introduction-title-text {
             color: $main-header-color;
             @include header-style;
         }
 
-        .introduction-title-desc{
+        .introduction-title-desc {
             @include sub-header-style;
         }
     }
 
-    .title-text{
-        color: $main-header-color;
-        @include header-style;
+    .title-text {
+        // color: $main-header-color;
+
+        font-family: "Poppins";
+        font-size: 50px;
+        font-weight: 500;
+        font-style: normal;
+        text-align: left;
+        color: #333333;
+        // @include header-style;
     }
 
-    .title-desc{
-        @include sub-header-style;
+    .title-desc {
+        // @include sub-header-style;
+        font-family: "Poppins";
+        font-size: 28px;
+        font-weight: normal;
+        font-style: normal;
+        text-align: left;
+        color: #333333;
     }
 
-     .admitting-institutes-container{
+    .admitting-institutes-container {
 
-        .toggle-icon{
+        .toggle-icon {
             border-radius: 20px;
             border: 1px solid #ccc;
             padding: 10px 20px;
-            .active-grid{
-                svg{
-                    path{
+
+            .active-grid {
+                svg {
+                    path {
                         fill: blue;
                     }
                 }
             }
         }
-     }
-    
-}
+    }
 
+    .share-svg {
+        right: 0px;
+        width: 26%;
+        height: 63%;
+        opacity: 0.3;
+        top: 0px;
+    }
+
+}

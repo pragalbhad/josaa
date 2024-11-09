@@ -10,17 +10,16 @@ function TabNavbar({ tabs }) {
 
   const [activeTab, setActiveTab] = useState(null);
   const [selectedDropdownLabel, setSelectedDropdownLabel] = useState({}); // Store selected label per tab
-  const [dropdownOpen, setDropdownOpen] = useState(null); 
+  const [dropdownOpen, setDropdownOpen] = useState(null);
 
   const handleNavigation = (link, tabLabel, itemLabel = null) => {
     navigate(link);
     setActiveTab(tabLabel);
 
     if (itemLabel) {
-      // Update selected dropdown label per tab
-      setSelectedDropdownLabel(prev => ({ ...prev, [tabLabel]: itemLabel }));
+      setSelectedDropdownLabel((prev) => ({ ...prev, [tabLabel]: itemLabel }));
     } else {
-      setSelectedDropdownLabel(prev => ({ ...prev, [tabLabel]: null })); // Reset if not in dropdown
+      setSelectedDropdownLabel((prev) => ({ ...prev, [tabLabel]: null })); // Reset if not in dropdown
     }
 
     setDropdownOpen(null);
@@ -46,9 +45,13 @@ function TabNavbar({ tabs }) {
               {tab.dropdown.map((item, idx) => (
                 <div
                   key={idx}
-                  onClick={() => handleNavigation(item.link, tab.label, item.label)}
+                  onClick={() =>
+                    handleNavigation(item.link, tab.label, item.label)
+                  }
                   className={`dropdown-item d-flex justify-content-between cursor-pointer ${
-                    selectedDropdownLabel[tab.label] === item.label ? "active" : ""
+                    selectedDropdownLabel[tab.label] === item.label
+                      ? "active"
+                      : ""
                   }`}
                 >
                   <div>{item.label}</div>
@@ -63,7 +66,9 @@ function TabNavbar({ tabs }) {
               onClick={() => handleNavigation(tab.link, tab.label)}
               key={index}
               className={`nav-link cursor-pointer ${
-                location.pathname === tab.link || activeTab === tab.label ? "active" : ""
+                location.pathname === tab.link || activeTab === tab.label
+                  ? "active"
+                  : ""
               }`}
             >
               {tab.label}

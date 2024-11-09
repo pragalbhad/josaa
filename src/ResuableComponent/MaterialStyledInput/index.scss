@@ -8,33 +8,28 @@
     padding: 8px 20px;
     font-size: 1rem;
     border: none;
-    border: 1px solid #ccc;
+    border: 1px solid #afafaf;
+    border-color: #afafaf;
     outline: none;
     transition: border-color 0.3s;
-    background-color: transparent;
-    border-radius: 12px;
+    border-radius: 8px;
+    background: #ffffff;
 
     &:focus {
-      box-shadow: none !important; // Remove the default box shadow
-      border: 1px solid #ccc !important;
+      box-shadow: none !important;
+      border: 1px solid #afafaf !important;
     }
 
     &:hover {
-      box-shadow: none !important; // Remove the default box shadow
+      box-shadow: none !important;
 
     }
 
     &.is-invalid {
-      box-shadow: none !important; // Remove the default box shadow
+      box-shadow: none !important;
 
     }
 
-    //   &:focus + label,
-    //   &.focused + label {
-    //     color: #6200ea; // Adjust to your theme color
-    //     transform: translateY(-1.5rem);
-    //     font-size: 0.8rem;
-    //   }
 
     &::placeholder {
       color: transparent;
@@ -55,19 +50,22 @@
     position: absolute;
     top: 8px;
     left: 1rem;
-    font-size: 1rem;
-    color: #999;
     transition: all 0.3s ease;
     pointer-events: none;
-    background-color: white; // for a white background behind label
+    background-color: white; 
     padding: 0 4px;
+
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+    color: #000000;
   }
 
-  // When the field has focus or content, the label floats above
   &.focused label {
     transform: translateY(-1.0rem);
     font-size: 0.8rem;
-    //   color: #6200ea; // Adjust to your theme color
   }
 
 

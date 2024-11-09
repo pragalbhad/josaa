@@ -16,6 +16,8 @@ import { MdDeleteOutline } from "react-icons/md";
 import { PiArrowFatUp, PiArrowFatUpBold } from "react-icons/pi";
 import { PiArrowFatDownBold } from "react-icons/pi";
 import { getCollegeTrends } from "../../redux/actions/collegeTrendsAction";
+import sharemockform from '../../assests/images/sharemockform.png';
+
 
 const MockJossaForm = () => {
   const [examType, setExamType] = useState(0);
@@ -94,7 +96,7 @@ const MockJossaForm = () => {
   return (
     <StudentLayout>
       <Container className="mock-jossa-form-container">
-        <Row className="mock-jossa-form-header-container">
+        <Row className="mock-jossa-form-header-container position-relative">
           <h1 className="title-text">Mock JoSAA Form</h1>
           <div className="title-desc mt-3">
             Our Mock JoSAA Form serves as a valuable tool to assist you in
@@ -110,6 +112,8 @@ const MockJossaForm = () => {
             ultimately increasing your likelihood of securing a more favorable
             seat allocation.
           </div>
+
+          <img src={sharemockform} alt="sharemockform" className="share-svg position-absolute"/>
         </Row>
 
         <Row className="jossa-help-tabel-title-container">
