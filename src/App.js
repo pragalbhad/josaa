@@ -3,12 +3,9 @@ import Unauthorized from "./components/UnauthorizedPage/UnauthorizedPage";
 import ProtectedRoute from "./routes/ProtectedRoutes";
 import { useSelector } from "react-redux";
 import Student from "./Pages/Student/Student";
-import LandingPage from "./Pages/LandingPage";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import Home from "./components/Home";
 import Information from "./components/Information";
 import JossaHelp from "./components/JossaHelp";
-import "./App.css";
 import MockJossaForm from "./components/MockJossaForn";
 import CollegeRecommendation from "./Pages/LandingPage";
 import Dashboard from "./components/DashBoard";
@@ -18,6 +15,7 @@ import { Container } from "react-bootstrap";
 import ContactUs from "./components/ContactUs";
 import EditProfile from "./components/EditProfile";
 import ExamsDetail from "./components/ExamsDetail";
+import "./App.css";
 
 function App() {
   const role = useSelector((state) => state.auth.role);
@@ -28,7 +26,6 @@ function App() {
       <Router>
       <Header />
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
 
           {/* Role-Based Protected Routes */}
           <Route

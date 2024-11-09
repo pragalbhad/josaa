@@ -50,8 +50,7 @@ const Header = () => {
   }, [dispatch, token]);
 
   const handleOptionSelect = (option) => {
-    navigate(`/${option.label}`);
-    console.log(`Selected: ${option.label}`);
+    navigate(`${option.link}`);
   };
 
   const handleOpen = () => {
