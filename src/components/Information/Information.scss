@@ -58,11 +58,17 @@
     }
 
     .share-svg {
-        right: 0px;
         width: 26%;
         height: 63%;
         opacity: 0.3;
-        top: 0px;
+        left: 0%;
+        top: 20%;
+
+        @media(min-width: 992px){
+            left: auto;
+            right: 0px;
+            top: 0px;
+        }
     }
 
 }

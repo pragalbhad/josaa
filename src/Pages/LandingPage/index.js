@@ -70,7 +70,7 @@ const CollegeRecommendation = () => {
 
   return (
     <StudentLayout>
-      <Container fluid className="landing-page-container d-flex flex-column">
+      <Container className="landing-page-container d-flex flex-column">
         <Row className="college-recommendation-wrapper m-0 p-0 mt-4">
           <div className="title-text">College Recommendations</div>
 
@@ -184,8 +184,7 @@ const CollegeRecommendation = () => {
 
             <div className="year-selection">Mains 2024</div>
           </div>
-          <div className="w-50 filter-container">
-            {/* <Button label="filter" className={"filter-btn"} /> */}
+          <div className="w-50 mt-4 filter-container">
             <FilterDropdown
               options={[
                 "Filter one",

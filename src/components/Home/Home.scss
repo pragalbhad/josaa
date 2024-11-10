@@ -1,11 +1,22 @@
 .home-section {
+
     display: flex;
-    flex-direction: column;
     gap: 3rem;
+    flex-direction: column;
     margin: 4rem 0rem;
 
+    padding: 0rem 2rem !important;
+
+    @media(min-width: 992px){
+        padding: 0px
+    }
+
+    .home-wrapper{
+        display: flex;
+        gap: 4rem;
+    }
+
     .announcement-banner {
-        /* background-color: #f8f9fa; */
         padding: 1.5rem 1rem 1rem 1rem;
         border: 1px solid #ddd;
         position: relative;
@@ -83,9 +94,15 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             height: 100%;
-            margin-top: -20px;
-            margin-left: 73px;
+            margin-top: 2rem;
+            margin-left: 0px;
+            width: 100%;
+
+            @media(min-width: 992px){
+                margin-top: -20px;
+                margin-left: 73px;
             width: 90%;
+            }
         }
     }
 
@@ -179,6 +196,14 @@
                         }
                     }
                 }
+            }
+        }
+
+        .jossa-help-flow-img{
+            margin-top: 4rem;
+
+            @media(min-width: 992px){
+                margin-top: 0px
             }
         }
 

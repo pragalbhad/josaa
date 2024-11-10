@@ -72,123 +72,124 @@ const Home = () => {
 
   return (
     <Container className="home-section">
-      {/* Announcement Banner */}
-      <Card className="announcement-banner mb-4">
-        <Card.Body>
-          <span className="announcement-label">ANNOUNCEMENT</span>
-          <p className="announcement-text">
-            Rankings HAVE BEEN ANNOUNCED! NOW IS THE PERFECT TIME TO DISCOVER
-            WHICH INSTITUTE AND ACADEMIC PROGRAM YOU COULD SECURE BASED ON YOUR
-            JEE MAINS 2024 RESULTS. SIGN UP TO LEARN MORE!
-          </p>
-        </Card.Body>
-      </Card>
+      <Row className="home-wrapper">
+        <Card className="announcement-banner mb-4">
+          <Card.Body>
+            <span className="announcement-label">ANNOUNCEMENT</span>
+            <p className="announcement-text">
+              Rankings HAVE BEEN ANNOUNCED! NOW IS THE PERFECT TIME TO DISCOVER
+              WHICH INSTITUTE AND ACADEMIC PROGRAM YOU COULD SECURE BASED ON
+              YOUR JEE MAINS 2024 RESULTS. SIGN UP TO LEARN MORE!
+            </p>
+          </Card.Body>
+        </Card>
 
-      {/* Welcome Section */}
-      <Row className="welcome-section">
-        <Col md={6}>
-          <h2>Welcome to JoSSA Help</h2>
-          <p className="welcome-text">
-            Your go-to resource for navigating the complex world of admissions
-            to India's top technical institutes. From registration to final
-            admission, we're here to guide you every step of the way. Let's turn
-            your aspirations into reality together!
-          </p>
-          <Button variant="danger" className="know-more-btn">
-            Know More
-          </Button>
-        </Col>
-        <Col md={6}>
-          <img
-            src={Home1}
-            alt="Student writing exam"
-            className="welcome-image"
-          />
-        </Col>
-      </Row>
+        {/* Welcome Section */}
+        <Row className="welcome-section">
+          <Col md={6}>
+            <h2>Welcome to JoSSA Help</h2>
+            <p className="welcome-text">
+              Your go-to resource for navigating the complex world of admissions
+              to India's top technical institutes. From registration to final
+              admission, we're here to guide you every step of the way. Let's
+              turn your aspirations into reality together!
+            </p>
+            <Button variant="danger" className="know-more-btn">
+              Know More
+            </Button>
+          </Col>
+          <Col md={6}>
+            <img
+              src={Home1}
+              alt="Student writing exam"
+              className="welcome-image"
+            />
+          </Col>
+        </Row>
 
-      {/* Divider Section */}
-      <Row className="divider mt-4 mb-4">
-        <span>Let's go</span>
-      </Row>
+        {/* Divider Section */}
+        <Row className="divider mt-4 mb-4">
+          <span>Let's go</span>
+        </Row>
 
-      <Row>
-        <h3 className="section-title">News & Events</h3>
-        <Row className="news-events-section">
-          {/* News Cards */}
+        <Row className="m-0 p-0">
+          <h3 className="section-title">News & Events</h3>
+          <Row className="news-events-section m-0 p-0">
+            {/* News Cards */}
 
-          <Col className="news-cards d-flex flex-column" lg={5}>
-            <Col md={12} className="news-card">
-              <div className="news-card-content">
-                <div>
-                  {newsItems.data &&
-                    newsItems.data
-                      .filter((i) => i.tag === "New")
-                      .map((i) => (
-                        <ul key={i.id}>
-                          <li>
-                            {/* JEE (Mains) Session-2 will be conducted on
+            <Col className="news-cards d-flex flex-column" lg={5}>
+              <Col md={12} className="news-card">
+                <div className="news-card-content">
+                  <div>
+                    {newsItems.data &&
+                      newsItems.data
+                        .filter((i) => i.tag === "New")
+                        .map((i) => (
+                          <ul key={i.id}>
+                            <li>
+                              {/* JEE (Mains) Session-2 will be conducted on
                             <br />
                             <span>4, 5, 6, 8, 9, April 2024</span> */}
-                            {i.title}
-                          </li>
+                              {i.title}
+                            </li>
 
-                          {/* <li>
+                            {/* <li>
                             JEE (Advanced) Exam to be conducted on
                             <br />
                             <span>20 April, 2024</span>
                           </li> */}
 
-                          {/* <li>
+                            {/* <li>
                             JEE (Mains) rank will be announced by
                             <br />
                             <span>26 May, 2024</span>
                           </li> */}
-                        </ul>
-                      ))}
-                  <div className="read-more cursor-pointer">View More</div>
+                          </ul>
+                        ))}
+                    <div className="read-more cursor-pointer">View More</div>
+                  </div>
                 </div>
-              </div>
-            </Col>
+              </Col>
 
-            <Col md={12} className="news-card">
-              <div className="news-card-header d-flex justify-content-between">
-                <h4>About JoSAAHelp.in</h4>
-                <div className="right-chevron">
-                  <FaArrowRight />
+              <Col md={12} className="news-card">
+                <div className="news-card-header d-flex justify-content-between">
+                  <h4>About JoSAAHelp.in</h4>
+                  <div className="right-chevron">
+                    <FaArrowRight />
+                  </div>
                 </div>
-              </div>
-              <div className="news-card-content">
-                <p>
-                  Discover comprehensive guidance and support for your JoSAA
-                  counselling journey. From registration to admission,
-                  JoSAAHelp.in is your trusted companion. Click to explore more!
-                </p>
-                <a href="/" className="read-more">
-                  Read More
-                </a>
-              </div>
-            </Col>
+                <div className="news-card-content">
+                  <p>
+                    Discover comprehensive guidance and support for your JoSAA
+                    counselling journey. From registration to admission,
+                    JoSAAHelp.in is your trusted companion. Click to explore
+                    more!
+                  </p>
+                  <a href="/" className="read-more">
+                    Read More
+                  </a>
+                </div>
+              </Col>
 
-            <Col md={12} className="news-card">
-              <div className="news-card-header d-flex justify-content-between">
-                <h4>JoSAA Information</h4>
-                <div className="right-chevron">
-                  <FaArrowRight />
+              <Col md={12} className="news-card">
+                <div className="news-card-header d-flex justify-content-between">
+                  <h4>JoSAA Information</h4>
+                  <div className="right-chevron">
+                    <FaArrowRight />
+                  </div>
                 </div>
-              </div>
-              <div className="news-card-content">
-                <p>
-                  Stay updated with the latest insights, tips, and essential
-                  information about the JoSAA counselling process. Click to
-                  access vital resources and stay ahead of the curve.
-                </p>
-                <a href="/" className="read-more">
-                  Read More
-                </a>
-              </div>
-            </Col>
-            {/* <Col md={7} className="news-card">
+                <div className="news-card-content">
+                  <p>
+                    Stay updated with the latest insights, tips, and essential
+                    information about the JoSAA counselling process. Click to
+                    access vital resources and stay ahead of the curve.
+                  </p>
+                  <a href="/" className="read-more">
+                    Read More
+                  </a>
+                </div>
+              </Col>
+              {/* <Col md={7} className="news-card">
             <div className="news-card-content">
               <h4>JoSAA Information</h4>
               <p>
@@ -201,22 +202,20 @@ const Home = () => {
               </a>
             </div>
           </Col> */}
-          </Col>
+            </Col>
 
-          <Col lg={7}>
-            <img
-              src={JEEFlow}
-              alt="JoSAAHelpFlow"
-              className="welcome-image"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Col>
+            <Col lg={7} className="jossa-help-flow-img">
+              <img
+                src={JEEFlow}
+                alt="JoSAAHelpFlow"
+                className="welcome-image"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Col>
+          </Row>
         </Row>
-      </Row>
 
-      {/* <Row>
-        <NestedColTable data={scheduleData} />
-      </Row> */}
+      </Row>
     </Container>
   );
 };

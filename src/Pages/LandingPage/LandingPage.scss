@@ -1,17 +1,16 @@
 .landing-page-container {
     gap: 24px;
-    // margin: 0px 10rem;
 
     .college-recommendation-wrapper {
         gap: 24px;
 
+        .title-text{
+            word-wrap: break-word;
+        }
+
         .college-recommendation-title-text {
             color: var(--Black-Darker, #000);
-            // font-family: "DM Sans";
-            // font-size: 27px;
-            // font-style: normal;
-            // font-weight: 700;
-            // line-height: normal;
+           
         }
 
         .important-text {
@@ -25,39 +24,21 @@
 
         .college-reco-para {
 
-            // color: #1B1C1E;
-            // font-family: "DM Sans";
-            // font-size: 16px;
-            // font-style: normal;
-            // font-weight: 500;
-            // line-height: 24px;
-
 
         }
 
         .college-reco-tool-title {
-            // color: var(--Black-Darker, #000);
-            // font-family: "DM Sans";
-            // font-size: 16px;
-            // font-style: normal;
-            // font-weight: 700;
-            // line-height: normal;
         }
 
         .college-reco-tool-list-container {
             margin-left: 2.5rem;
 
             .tool-list {
-                // color: #1B1C1E;
-                // font-family: "DM Sans";
-                // font-size: 16px;
-                // font-style: normal;
-                // font-weight: 500;
-                // line-height: 24px;
-                // margin-left: 1rem;
+                word-wrap: break-word;
+
+              
 
                 .tool-list-title {
-                    // font-weight: 700;
                 }
             }
 
@@ -98,11 +79,19 @@
     }
 
     .w-50{
-        width: 50%;
+        width: 100% !important;
+
+        @media(min-width: 992px){
+            width: 50%;
+        }
     }
 
     .filter-container{
         text-align: right;
+    }
+
+    .container{
+        overflow: scroll;
     }
 
 }

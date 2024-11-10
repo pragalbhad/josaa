@@ -1,46 +1,6 @@
-// .table-container {
-//   max-width: 100%;
-//   overflow-x: auto;
-//   margin-top: 20px;
-// }
-
-
-
-// .filter-container label {
-//   margin-right: 10px;
-//   font-weight: bold;
-// }
-
-// .schedule-table {
-//   width: 100%;
-//   border-collapse: collapse;
-//   text-align: left;
-// }
-
-// .schedule-table th, .schedule-table td {
-//   padding: 12px;
-// }
-
-// .schedule-table th {
-//   background-color: #f5f5f5;
-//   font-weight: bold;
-// }
-
-// .group-cell {
-//   font-weight: bold;
-//   vertical-align: top;
-// }
-
-// /* Alternating background colors for each group */
-// .group-even {
-//   background-color: #f9f9f9;
-// }
-
-// .group-odd {
-//   background-color: #e9f7ff;
-// }
-
 .table-container {
+  overflow: scroll;
+  width: 100%;
 
   .filter-container {
     margin-bottom: 10px;

@@ -15,13 +15,15 @@ import { Container } from "react-bootstrap";
 import ContactUs from "./components/ContactUs";
 import EditProfile from "./components/EditProfile";
 import ExamsDetail from "./components/ExamsDetail";
+import Home from './components/Home';
+
 import "./App.css";
 
 function App() {
   const role = useSelector((state) => state.auth.role);
 
   return (
-    <Container fluid className="app m-0 p-0">
+    <Container fluid className="app m-0 p-0 w-100">
 
       <Router>
       <Header />
@@ -31,7 +33,7 @@ function App() {
           <Route
             element={<ProtectedRoute allowedRoles={["student", "admin"]} />}
           >
-            <Route path="/" element={<Student />} />
+            <Route path="/" element={<Home />} />
             <Route path="/Information" element={<Information />} />
             <Route path="/jossaHelp" element={<JossaHelp />} />
             <Route path="/mockJossaForm" element={<MockJossaForm />} />
