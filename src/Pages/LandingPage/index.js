@@ -3,7 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import "./LandingPage.scss";
 import ScheduleTable from "../../ResuableComponent/ScheduleTable";
 import CustomModal from "../../ResuableComponent/CustomModal";
-import StudentLayout from "../Student/StudentLayout";
+import StudentLayout from "../CommonLayout/CommonLayout";
 import Button from "../../ResuableComponent/Button";
 import FilterDropdown from "../../ResuableComponent/FilterDropdown";
 
@@ -85,18 +85,18 @@ const CollegeRecommendation = () => {
             strategize your preferences effectively.
           </div>
 
-          <div className="college-reco-tool-title title-desc">
+          <div className="college-reco-tool-title important-text title-desc">
             Why Use the College Recommendations Tool?
           </div>
           <ul className="college-reco-tool-list-container title-desc">
             <li className="tool-list">
-              <span className="tool-list-title"> Data-Driven Insights: </span>
+              <span className="tool-list-title important-text"> Data-Driven Insights: </span>
               Leverage historical data to get accurate projections of closing
               ranks for 2024, ensuring you have reliable information for your
               college selection.<span></span>
             </li>
             <li className="tool-list">
-              <span className="tool-list-title">
+              <span className="tool-list-title important-text">
                 {" "}
                 Personalized Recommendations:
               </span>
@@ -107,7 +107,7 @@ const CollegeRecommendation = () => {
               </span>
             </li>
             <li className="tool-list">
-              <span className="tool-list-title">Optimize Your Choices</span>
+              <span className="tool-list-title important-text">Optimize Your Choices</span>
               <span>
                 : Maximize your chances of securing a seat in your desired
                 institution by using our datadriven projections to prioritize
@@ -115,7 +115,7 @@ const CollegeRecommendation = () => {
               </span>
             </li>
             <li className="tool-list">
-              <span className="tool-list-title">Efficient Decision Making</span>
+              <span className="tool-list-title important-text">Efficient Decision Making</span>
               <span>
                 : Save time and effort by accessing a comprehensive list of
                 recommended engineering collegesand programs that match your
@@ -124,10 +124,10 @@ const CollegeRecommendation = () => {
             </li>
           </ul>
 
-          <div className="college-reco-tool-title title-desc">How It Works</div>
+          <div className="college-reco-tool-title title-desc important-text">How It Works</div>
           <ul className="college-reco-tool-list-container title-desc">
             <li className="tool-list">
-              <span className="tool-list-title title-desc">
+              <span className="tool-list-title title-desc important-text">
                 {" "}
                 Input Your Rank
               </span>
@@ -136,7 +136,7 @@ const CollegeRecommendation = () => {
               <span></span>
             </li>
             <li className="tool-list title-desc">
-              <span className="tool-list-title title-desc">
+              <span className="tool-list-title important-text title-desc">
                 Get Projections
               </span>
               <span>
@@ -145,7 +145,7 @@ const CollegeRecommendation = () => {
               </span>
             </li>
             <li className="tool-list title-desc">
-              <span className="tool-list-title title-desc">
+              <span className="tool-list-title important-text title-desc">
                 View Recommendations
               </span>
               <span>
@@ -154,7 +154,7 @@ const CollegeRecommendation = () => {
               </span>
             </li>
             <li className="tool-list title-desc">
-              <span className="tool-list-titl title-desce">
+              <span className="tool-list-titl important-text title-desce">
                 Make Informed Choices
               </span>
               <span>
@@ -175,7 +175,7 @@ const CollegeRecommendation = () => {
         </Row>
 
         <Row className="year-container mt-5 p-0">
-          <div className="d-flex gap-3 w-50">
+          <div className="d-flex gap-3 w-50 exam-filter-container">
             <div className="year-selection">Mains 2024</div>
 
             <div className="year-selection">Mains 2024</div>
@@ -184,7 +184,7 @@ const CollegeRecommendation = () => {
 
             <div className="year-selection">Mains 2024</div>
           </div>
-          <div className="w-50 mt-4 filter-container">
+          <div className="w-50 filter-container">
             <FilterDropdown
               options={[
                 "Filter one",

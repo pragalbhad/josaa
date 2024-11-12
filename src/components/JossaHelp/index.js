@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Jossahelp.scss";
-import StudentLayout from "../../Pages/Student/StudentLayout";
 import helpcard1 from "../../assests/images/helpcard1.png";
 import helpcard2 from "../../assests/images/helpcard2.png";
 import StartUpWardSvg from "../../assests/images/StarUpWardSvg.png";

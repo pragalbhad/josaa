@@ -6,6 +6,7 @@ $bg-color: #57c6bf;
 $card-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdAsk2GmumcGWZ2qklmV74hKlNmznSx.jpg');
 
+@import '../../assests/scss/global.scss';
 
 .mock-jossa-form-container {
     font-family: Arial, sans-serif;
@@ -30,16 +31,16 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
         }
 
         .title-text {
-            // font-size: 32px;
-            // font-weight: bold;
+
             margin-top: 10px;
+
+            @include popins-regular;
+            font-size: 50px;
         }
 
         .title-desc {
-            // font-size: 16px;
-            // color: $text-color;
-            // text-align: left;
-            // margin: 3rem 3rem 3rem 3rem;
+            @include popins-regular;
+            font-size: 28px;
         }
 
         .share-svg {
@@ -70,17 +71,16 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
                     .add-institute-btn {
                         border: none;
                         padding: 0rem 2rem;
-                        font-family: "Segoe UI";
-                        font-size: 18px;
-                        font-weight: normal;
                         font-style: normal;
                         text-align: left;
                         color: #ffffff;
 
                         border-radius: 42px;
 
-
-                        background: #b3200d;
+                        font-size: 18px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 600;
+                        background: #B3200D;
 
                         &:hover {
                             color: $primary-btn-color;
@@ -91,16 +91,17 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
 
                     .save-export-btn {
                         border: none;
-                        border: 1px solid #0275be;
+                        border: 1px solid #0275BE;
                         padding: 0rem 2rem;
                         border-radius: 42px;
-                        background: #0275be;
-                        font-family: "Segoe UI";
-                        font-size: 18px;
-                        font-weight: normal;
+                        background: #0275BE;
                         font-style: normal;
                         text-align: left;
                         color: #ffffff;
+
+                        font-size: 18px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 600;
 
                         &:hover {
                             color: #0275be;
@@ -135,31 +136,37 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
 }
 
 .remove-btn {
-    background: #b3200d;
+    background: #B3200D;
+    border: 1px solid #B3200D;
     color: #fff;
 
     &:hover {
-        color: #b3200d;
+        border: 1px solid #B3200D;
+        color: #B3200D;
         background: #fff;
     }
 }
 
 .up-btn {
-    background: #53a24c;
+    border: 1px solid #53A24C;
+    background: #53A24C;
     color: #fff;
 
     &:hover {
+        border: 1px solid #53A24C;
         background: #fff;
-        color: #53a24c;
+        color: #53A24C;
     }
 }
 
 .down-btn {
-    background: #ffc831;
+    border: 1px solid #FFC831;
+    background: #FFC831;
     color: #fff;
 
     &:hover {
+        border: 1px solid #FFC831;
         background: #fff;
-        color: #ffc831;
+        color: #FFC831;
     }
 }

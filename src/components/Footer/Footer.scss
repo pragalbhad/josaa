@@ -24,13 +24,12 @@
         .footer-text {
             gap: 12px;
             margin: 1rem 0;
-
-            font-family: "Poppins";
-            font-size: 22px;
-            font-weight: 300;
             font-style: normal;
             text-align: left;
             color: #fafafa;
+
+            font-size: 22px;
+            @include poppins-light;
         }
     }
 
@@ -38,12 +37,12 @@
         padding: 20px 35px;
 
         .cc-text {
-            font-family: "Poppins";
-            font-size: 18px;
-            font-weight: 300;
             font-style: normal;
             text-align: left;
             color: #fafafa;
+            
+            font-size: 18px;
+            @include poppins-light
         }
 
     }

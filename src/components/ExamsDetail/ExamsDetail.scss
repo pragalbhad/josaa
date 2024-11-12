@@ -1,21 +1,23 @@
+@import '../../assests/scss/global.scss';
+
 .exams-2024 {
     padding: 3rem 15rem !important;
     h2 {
 
-        font-family: "Poppins";
-        font-size: 44px;
-        font-weight: normal;
         font-style: normal;
         text-align: left;
         color: #000000;
+
+        @include popins-semibold;
+        font-size: 44px;
     }
     p {
-        font-family: "Poppins";
-        font-size: 24px;
-        font-weight: normal;
         font-style: normal;
         text-align: left;
         color: #838383;
+
+        @include popins-regular;
+        font-size: 24px;
     }
 
     .rank-section {
@@ -31,12 +33,13 @@
         }
 
         .info-text {
-            font-family: "Poppins";
-            font-size: 14px;
-            font-weight: normal;
+           
             font-style: normal;
             text-align: left;
-            color: #ea1f1f;
+            color: #EA1F1F;
+
+            @include popins-regular;
+            font-size: 14px;
         }
 
         .exam-details-input-field-wrapper {
@@ -48,9 +51,11 @@
         }
 
         .modifications-info {
-            font-size: 12px;
-            color: green;
+            color: #11AA00;
             margin: 5px 0;
+
+            @include popins-regular;
+            font-size: 14px;
         }
 
         .error-message {
@@ -63,17 +68,17 @@
             margin-top: 1.25rem;
             width: 100px;
 
-            border-color: #007bff;
-
+            border-color: #0275BE;
             border-radius: 42px;
-            background: #0275be;
-
-            font-family: "Segoe UI";
-            font-size: 18px;
-            font-weight: normal;
+            background: #0275BE;
+            
             font-style: normal;
             text-align: left;
             color: #ffffff;
+            
+            font-size: 18px;
+            @include segoe-ui-semibold;
+            text-align: center;
 
 
             &:disabled {

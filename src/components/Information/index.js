@@ -5,7 +5,7 @@ import CustomCarousel from "../../ResuableComponent/CustomCarousel/CustomCarouse
 import { IoGrid } from "react-icons/io5";
 import { FaTableColumns } from "react-icons/fa6";
 import NestedColTable from "../../ResuableComponent/NestedColTable";
-import StudentLayout from "../../Pages/Student/StudentLayout";
+import StudentLayout from "../../Pages/CommonLayout/CommonLayout";
 import { useDispatch } from "react-redux";
 import { getBlog } from "../../redux/actions/blogAction";
 import StarBGSvg from "../../assests/images/StarBGSvg.png";
@@ -103,6 +103,75 @@ const Information = () => {
         },
       ],
     },
+    {
+      groupRow: "Round 1",
+      events: [
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event:
+            "Display of Mock Seat Allocation-1 based on choices filled by candidates",
+        },
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event:
+            "Display of Mock Seat Allocation-2 based on choices filled by candidates",
+        },
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event: "Candidates can Lock their Choices",
+        },
+      ],
+    },
+
+    {
+      groupRow: "Round 1",
+      events: [
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event:
+            "Display of Mock Seat Allocation-1 based on choices filled by candidates",
+        },
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event:
+            "Display of Mock Seat Allocation-2 based on choices filled by candidates",
+        },
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event: "Candidates can Lock their Choices",
+        },
+      ],
+    },
+
+    {
+      groupRow: "Round 1",
+      events: [
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event:
+            "Display of Mock Seat Allocation-1 based on choices filled by candidates",
+        },
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event:
+            "Display of Mock Seat Allocation-2 based on choices filled by candidates",
+        },
+        {
+          date: "Sunday, 10 June 2024",
+          time: "10:00 AM",
+          event: "Candidates can Lock their Choices",
+        },
+      ],
+    },
+
   ];
 
   const dispatch = useDispatch();
@@ -124,7 +193,7 @@ const Information = () => {
   return (
     <StudentLayout>
       <Container className="information-container">
-        <Row className="introduction-container position-relative">
+        <Row className="introduction-container position-relative divider-row">
           <div className="title-text">Introduction</div>
           <div className="title-desc mt-3">
             The Joint Seat Allocation Authority, also known as JoSAA, is an
@@ -146,9 +215,9 @@ const Information = () => {
           </div>
         </Row>
 
-        <Row className="qualification-exam-container">
+        <Row className="qualification-exam-container divider-row">
           <div className="title-text">Qualification Examination</div>
-          <div className="title-desc mt-3">
+          <div className="list-desc mt-3">
             <ul>
               <li>JEE (Advanced)</li>
               <li>JEE (Main) B.E./B.Tech</li>
@@ -156,9 +225,9 @@ const Information = () => {
           </div>
         </Row>
 
-        <Row className="admitting-institutes-container">
+        <Row className="admitting-institutes-container divider-row">
           <div className="title-text">Admitting Institutes</div>
-          <div className="title-desc mt-3">
+          <div className="list-desc mt-3">
             <ul>
               <li>IITs</li>
               <li>NITs, IIEST, IIITs (Triple-I-Ts) and other -GFTIs</li>
@@ -168,12 +237,12 @@ const Information = () => {
 
         <Row className="events-at-josaa-container">
           <Row className="admitting-institutes-container">
-            <div className="title-text">Events of JoSAA</div>
-            <div className="title-desc mt-3">
+            <div className="title-text ">Events of JoSAA</div>
+            <div className="title-desc event-subtitle mt-3">
               *Based on JoSAA event - Sat 23 Dec, 2024 12 pm.
             </div>
 
-            <div className="toggle-view d-flex flex-row gap-4 my-4">
+            {/* <div className="toggle-view d-flex flex-row gap-4 my-4">
               <div className="title-desc">Toggle view</div>
               <div className="d-flex gap-3 toggle-icon">
                 <div
@@ -189,17 +258,17 @@ const Information = () => {
                   <IoGrid />
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            {isGridView ? (
+            {/* {isGridView ? (
               <div className="event-corousel">
                 <CustomCarousel data={data} />
               </div>
-            ) : (
-              <div>
+            ) : ( */}
+              <div className="mt-4">
                 <NestedColTable data={scheduleData} />
               </div>
-            )}
+            {/* )} */}
           </Row>
         </Row>
       </Container>

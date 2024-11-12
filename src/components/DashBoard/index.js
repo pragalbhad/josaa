@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.scss";
-import StudentLayout from "../../Pages/Student/StudentLayout";
+import StudentLayout from "../../Pages/CommonLayout/CommonLayout";
 import Card from "../../ResuableComponent/Card";
 import ExamToggle from "../../ResuableComponent/ExamToggle";
 import ColorBar from "../../ResuableComponent/ColoBar";
@@ -10,10 +10,10 @@ const Dashboard = () => {
   const [selectedExam, setSelectedExam] = useState("MAINS (2024)");
 
   const examData = [
-    { title: "MAINS Session 1", value: "52", color: "#6f42c1" },
-    { title: "MAINS Session 2", value: "52", color: "#007bff" },
-    { title: "ADVANCED", value: "21000", color: "#28a745" },
-    { title: "MAINS Rank", value: "21000", color: "#ff5733" },
+    { title: "MAINS Session 1", value: "52", color: "#5A02BE" },
+    { title: "MAINS Session 2", value: "52", color: "#025ABE" },
+    { title: "ADVANCED", value: "21000", color: "#02BEAB" },
+    { title: "MAINS Rank", value: "21000", color: "#BE0235" },
   ];
 
   const instituteData = [
@@ -75,10 +75,14 @@ const Dashboard = () => {
         />
         <div className="exam-info">
           <p>
-            Recommendations are based on your CRL Rank: 54000, Seat Type: OPEN,
+            ***Recommendations are based on your CRL Rank: 54000, Seat Type: OPEN,
             Gender: Male and State: Haryana
           </p>
-          <div className="d-flex gap-4 w-100 align-items-center">
+          <p>
+            ***The actual cutoff will vary according to JoSAA allocation. Please use the predicted cutoff for guidance only.
+          </p>
+
+          <div className="d-flex gap-4 w-100 align-items-center allocation-container">
             <div className="allotment-text">Chance of Allotment</div>
             <div className="color-bar-wrapper">
               <ColorBar />

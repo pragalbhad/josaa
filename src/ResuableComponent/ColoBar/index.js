@@ -12,16 +12,20 @@ const ColorBar = () => {
     "60%",
     "70%",
     "80%",
-    "90%",
     ">90%",
   ];
 
   const getBackgroundColor = (index) => {
-    if (index === 0) return "hsl(0, 100%, 48%)"; // Dark red for <10%
-    if (index === 1) return "hsl(10, 100%, 48%)"; // Slightly lighter red for 10%
-    if (index === 9) return "hsl(90, 100%, 48%)"; // Slightly lighter green for 90%
-    if (index === 10) return "hsl(120, 100%, 48%)"; // Dark green for >90%
-    return `hsl(${(index / (ranges.length - 1)) * 120}, 100%, 48%)`; // Gradual colors for the rest
+    if (index === 0) return "#da9da2"; 
+    if (index === 1) return "#f6b1ad";
+    if (index === 2) return "#f7bca8"; 
+    if (index === 3) return "#fad59e"; 
+    if (index === 4) return "#fce2b1"; 
+    if (index === 5) return "#fff39e"; 
+    if (index === 6) return "#f2f19d"; 
+    if (index === 7) return "#d6e7aa"; 
+    if (index === 8) return "#b4deb1"; 
+    if (index === 9) return "#9ed3b2"; 
   };
 
   return (

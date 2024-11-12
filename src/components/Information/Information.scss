@@ -19,25 +19,35 @@
     }
 
     .title-text {
-        // color: $main-header-color;
-
-        font-family: "Poppins";
-        font-size: 50px;
-        font-weight: 500;
         font-style: normal;
         text-align: left;
         color: #333333;
-        // @include header-style;
+
+        font-size: 50px;
+        @include popins-medium;
     }
 
     .title-desc {
-        // @include sub-header-style;
-        font-family: "Poppins";
-        font-size: 28px;
-        font-weight: normal;
         font-style: normal;
         text-align: left;
         color: #333333;
+
+        font-size: 28px;
+        @include popins-regular
+    }
+
+    .divider-row{
+        border-bottom: 1px solid #CCCCCC;
+        padding-bottom: 3rem;
+    }
+
+    .list-desc{
+        @include popins-regular;
+        font-size: 18px;
+    }
+
+    .event-subtitle{
+        @include poppins-light
     }
 
     .admitting-institutes-container {
@@ -64,7 +74,7 @@
         left: 0%;
         top: 20%;
 
-        @media(min-width: 992px){
+        @media(min-width: 992px) {
             left: auto;
             right: 0px;
             top: 0px;

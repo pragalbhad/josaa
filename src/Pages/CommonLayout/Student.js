@@ -1,19 +1,16 @@
 import React from "react";
-import StudentLayout from "./StudentLayout";
-import LandingPage from "../LandingPage";
-import "./Student.scss";
-import Register from "../Register";
+import CommonLayout from "./CommonLayout";
+import "./CommonLayout.scss";
 import Home from "../../components/Home";
-import Information from "../../components/Information";
 
 const Student = () => {
   return (
-    <StudentLayout>
+    <CommonLayout>
       {/* {/* <Register /> */}
       {/* <LandingPage />  */}
       <Home />
       {/* <Information /> */}
-    </StudentLayout>
+    </CommonLayout>
   );
 };
 

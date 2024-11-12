@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { FaBook } from "react-icons/fa";
+import { FaBook, FaRegAddressCard, FaSignOutAlt } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
-import { FaRegAddressCard } from "react-icons/fa";
-import { FaSignOutAlt } from "react-icons/fa";
 import Register from "../../Pages/Register";
 import TabNavbar from "../../ResuableComponent/Tab";
 import Button from "../../ResuableComponent/Button";
@@ -25,6 +23,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isSticky, setIsSticky] = useState(false); // New state for sticky header
   const isSignUpModalOpen = useSelector(
     (state) => state.buttonReducer.isSignUpModalOpen
   );
@@ -48,6 +47,19 @@ const Header = () => {
   useEffect(() => {
     dispatch(getProfile());
   }, [dispatch, token]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) { 
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleOptionSelect = (option) => {
     navigate(`${option.link}`);
@@ -89,7 +101,7 @@ const Header = () => {
   ];
 
   return (
-    <Container fluid className="header-container">
+    <Container fluid className={`header-container ${isSticky ? "sticky" : ""}`}>
       <Row lg={12} className="header-row-one d-flex flex-row col-12 w-100 m-0">
         <Col className="logo-wrapper">
           <img src={light} alt="logo" />
@@ -127,7 +139,7 @@ const Header = () => {
         )}
       </Row>
 
-      <Row className>
+      <Row>
         <TabNavbar tabs={tabs} />
       </Row>
 

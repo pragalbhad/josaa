@@ -2,15 +2,18 @@
     display: flex;
     gap: 1rem;
     margin: 1rem 0;
+
     .toggle-button {
       padding: 0.5rem 1rem;
       border: none;
       background-color: #fff;
-      color: #007bff;
+      color: #0275BE;
       border: 1.5px solid #007bff;
       cursor: pointer;
+      border-radius: 31px !important; 
+
       &.active {
-        background-color: #0056b3;
+        background-color: #0275BE;
         color: #fff;
       }
     }

@@ -1,7 +1,4 @@
 import React, { Children } from 'react'
-import { Container } from 'react-bootstrap'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 
 // const StyledContainer = styled.div`
 //   @media (min-width: 768px) and (orientation: portrait)  {
@@ -21,7 +18,7 @@ import Footer from '../../components/Footer'
 //   }
 // `;
 
-function StudentLayout({children}) {
+function CommonLayout({children}) {
   return (
     <>
         <main className='main-container'>
@@ -31,4 +28,4 @@ function StudentLayout({children}) {
   )
 }
 
-export default StudentLayout
+export default CommonLayout

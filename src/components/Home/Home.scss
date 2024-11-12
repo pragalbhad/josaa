@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import '../../assests/scss/global.scss';
+
 .home-section {
 
     display: flex;
@@ -7,11 +10,11 @@
 
     padding: 0rem 2rem !important;
 
-    @media(min-width: 992px){
+    @media(min-width: 992px) {
         padding: 0px
     }
 
-    .home-wrapper{
+    .home-wrapper {
         display: flex;
         gap: 4rem;
     }
@@ -24,25 +27,25 @@
         box-shadow: 10px 10px 4px 0px #ccc;
 
         .announcement-label {
-            background-color: #d9534f;
+            background-color: $red-color;
             padding: 0.2rem 0.5rem;
             position: absolute;
             top: 20px;
             left: -10px;
 
-            font-family: "Poppins";
             font-size: 26px;
-            font-weight: normal;
             font-style: normal;
             text-align: left;
             color: #ffffff;
+
+            @include popins-medium;
         }
 
         .announcement-text {
+            @include popins-medium;
+
             margin-top: 2.5rem;
-            font-family: "Poppins";
             font-size: 28px;
-            font-weight: 500;
             font-style: normal;
             text-align: left;
             color: #333333;
@@ -52,22 +55,24 @@
     .welcome-section {
 
         h2 {
-            font-family: "Poppins";
+            @include popins-semibold;
             font-size: 48px;
-            font-weight: normal;
+
             font-style: normal;
             text-align: left;
-            color: #0275be;
+            color: #0275BE;
             margin: -2rem 0rem 1rem 0rem;
         }
 
         .welcome-text {
             font-family: "Poppins";
-            font-size: 22px;
             font-weight: normal;
             font-style: normal;
             text-align: left;
             color: #000000;
+
+            @include popins-regular;
+            font-size: 30px;
         }
 
         .know-more-btn {
@@ -76,14 +81,16 @@
             transition: background-color 0.3s;
             border-radius: 12px;
             filter: drop-shadow(8px 8px 7.5px rgba(0, 0, 0, 0.16));
-            background: #b3200d;
-            font-family: "Poppins";
-            font-size: 28px;
-            font-weight: normal;
+            background: #B3200D;
+        
             font-style: normal;
             text-align: center;
             color: #ffffff;
             width: 100%;
+
+            @include popins-regular;
+            font-size: 28px;
+
 
             &:hover {
                 background-color: #c9302c;
@@ -98,22 +105,22 @@
             margin-left: 0px;
             width: 100%;
 
-            @media(min-width: 992px){
+            @media(min-width: 992px) {
                 margin-top: -20px;
                 margin-left: 73px;
-            width: 90%;
+                width: 90%;
             }
         }
     }
 
     .section-title {
         margin-bottom: 1rem;
-        font-family: "Poppins";
         font-size: 44px;
-        font-weight: normal;
         font-style: normal;
         text-align: left;
         color: #0275be;
+
+        @include popins-semibold;
     }
 
     .news-events-section {
@@ -140,9 +147,9 @@
                     margin-bottom: 1rem;
 
                     h4 {
-                        font-family: "Poppins";
+                        @include popins-medium;
                         font-size: 28px;
-                        font-weight: 500;
+
                         font-style: normal;
                         text-align: left;
                         color: #333333;
@@ -154,6 +161,7 @@
                         width: 27px;
                         text-align: center;
                         background: rgba(2, 117, 190, 0.5);
+                        color: #0275BE;
 
                         &:hover {
                             background-color: #0d6efd;
@@ -168,6 +176,12 @@
                 }
 
                 .news-card-content {
+
+                    li{
+                        @include popins-regular;
+                        font-size: 32px;
+                    }
+
                     h4 {
                         font-size: 1.25rem;
                         color: #333;
@@ -177,19 +191,22 @@
 
                     p {
                         color: #555;
-                        font-size: 0.95rem;
                         margin-bottom: 1rem;
+
+                        @include poppins-light;
+                        font-size: 26px;
                     }
 
                     .read-more {
                         text-decoration: none;
                         float: right;
-                        font-family: "Poppins";
-                        font-size: 18px;
-                        font-weight: normal;
+                        
                         font-style: normal;
                         text-align: left;
-                        color: #b3200d;
+                        color: #B3200D;
+                        
+                        font-size: 32px;
+                        @include popins-semibold;
 
                         &:hover {
                             text-decoration: underline;
@@ -199,10 +216,10 @@
             }
         }
 
-        .jossa-help-flow-img{
+        .jossa-help-flow-img {
             margin-top: 4rem;
 
-            @media(min-width: 992px){
+            @media(min-width: 992px) {
                 margin-top: 0px
             }
         }
@@ -212,9 +229,9 @@
 
     .divider {
         position: relative;
-        width: 80%;
+        width: 90%;
         margin: 4rem auto;
-        border-bottom: 4px solid #cccccc;
+        border-bottom: 2px solid #cccccc;
 
         span {
             position: absolute;
@@ -223,12 +240,12 @@
             background: white;
             padding: 0px 10px;
             width: 14%;
-            font-family: "Poppins";
-            font-size: 32px;
-            font-weight: 300;
             font-style: normal;
             text-align: left;
-            color: #cccccc;
+            
+            @include poppins-light;
+            font-size: 32px;
+            color: #cccccc; 
         }
     }
 }

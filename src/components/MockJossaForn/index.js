@@ -5,7 +5,7 @@ import CustomCarousel from "../../ResuableComponent/CustomCarousel/CustomCarouse
 import { IoGrid } from "react-icons/io5";
 import { FaTableColumns } from "react-icons/fa6";
 import NestedColTable from "../../ResuableComponent/NestedColTable";
-import StudentLayout from "../../Pages/Student/StudentLayout";
+import StudentLayout from "../../Pages/CommonLayout/CommonLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlog } from "../../redux/actions/blogAction";
 import { getInstituteData } from "../../redux/actions/gteInstituteNameAction";
@@ -98,12 +98,14 @@ const MockJossaForm = () => {
       <Container className="mock-jossa-form-container">
         <Row className="mock-jossa-form-header-container position-relative">
           <h1 className="title-text">Mock JoSAA Form</h1>
+          
           <div className="title-desc mt-3">
             Our Mock JoSAA Form serves as a valuable tool to assist you in
             filling and testing your choices before final submission on the
             official website. Utilize our tool to thoroughly research and refine
             your selections, arranging them in order of your preference.
           </div>
+
           <div className="title-desc mt-4">
             Designed to mirror the official tool`s appearance and functionality,
             our platform ensures familiarity and comfort, minimizing the risk of

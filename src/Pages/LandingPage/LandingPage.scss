@@ -1,34 +1,36 @@
+@import '../../assests/scss/global.scss';
+
 .landing-page-container {
     gap: 24px;
 
     .college-recommendation-wrapper {
         gap: 24px;
 
-        .title-text{
+        .title-text {
             word-wrap: break-word;
+            @include popins-medium;
+            font-size: 50px;
+        }
+
+        .title-desc {
+            @include popins-regular;
+            font-size: 28px;
         }
 
         .college-recommendation-title-text {
             color: var(--Black-Darker, #000);
-           
+            font-weight: 700;
+
         }
 
         .important-text {
-            color: #1B1C1E;
-            font-family: "DM Sans";
-            font-size: 16px;
-            font-style: normal;
+           
             font-weight: 700;
-            line-height: 24px;
         }
 
-        .college-reco-para {
+        .college-reco-para {}
 
-
-        }
-
-        .college-reco-tool-title {
-        }
+        .college-reco-tool-title {}
 
         .college-reco-tool-list-container {
             margin-left: 2.5rem;
@@ -36,10 +38,9 @@
             .tool-list {
                 word-wrap: break-word;
 
-              
 
-                .tool-list-title {
-                }
+
+                .tool-list-title {}
             }
 
         }
@@ -47,6 +48,18 @@
 
 
     .year-container {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: space-between;
+
+        @media(min-width: 992px) {
+            width: 100%;
+            flex-direction: row;
+            gap: 0px;
+        }
 
         .year-selection {
             display: flex;
@@ -59,12 +72,11 @@
             color: #288fb4;
             border-radius: 42px;
 
-            font-family: "Segoe UI";
-            font-size: 18px;
-            font-weight: normal;
             font-style: normal;
             text-align: left;
             color: #0275be;
+
+            @include segoe-ui-semibold;
 
             &:hover {
                 background: #288fb4;
@@ -73,24 +85,20 @@
             }
         }
 
-        .filter-btn{
-
-        }
+        .filter-btn {}
     }
 
-    .w-50{
-        width: 100% !important;
-
-        @media(min-width: 992px){
-            width: 50%;
-        }
-    }
-
-    .filter-container{
+    .filter-container {
         text-align: right;
+
+        width: 100%;
+
+        @media(min-width: 992px) {
+            width: 20%;
+        }
     }
 
-    .container{
+    .container {
         overflow: scroll;
     }
 

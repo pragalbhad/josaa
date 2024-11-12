@@ -1,7 +1,14 @@
+@import '../../assests/scss/global.scss';
+
 .institute-table {
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
+    th{
+      @include popins-medium;
+      font-size: 30px;
+      color: #979797;
+    }
     th, td {
       padding: 1rem;
       text-align: left;

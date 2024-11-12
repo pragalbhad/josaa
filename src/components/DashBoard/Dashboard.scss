@@ -1,3 +1,5 @@
+@import '../../assests/scss/global.scss';
+
 .dashboard-container {
     margin: 4rem;
     gap: 4rem;
@@ -9,21 +11,32 @@
         gap: 4rem;
     }
 
-    .color-bar-row{
+    .color-bar-row {
         width: 30%;
     }
 
-    .allotment-text{
-        width: 17%;
-        font-size: 17px;
-        font-weight: 700;
+    .allotment-text {
+        font-size: 30px;
+        @include popins-semibold;
     }
 
     .color-bar-wrapper {
         background: #fff;
         padding: 0.7rem 1rem 1.5rem 1rem;
         box-shadow: 0px 0px 7px 5px #d1d1d1;
-        width: 100%;
+        width: 50%;
         border-radius: 12px;
+    }
+
+    .exam-info {
+        margin-top: -4rem;
+        p {
+            @include popins-regular;
+            color: #838383;
+        }
+
+        .allocation-container{
+            margin-top: 4rem;
+        }
     }
 }

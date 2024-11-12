@@ -26,7 +26,7 @@ function TabNavbar({ tabs }) {
   };
 
   return (
-    <Navbar bg="primary" variant="dark">
+    <Navbar variant="dark" className="navbar-container">
       <Nav className="mx-auto navbar-nav">
         {tabs.map((tab, index) =>
           tab.dropdown ? (

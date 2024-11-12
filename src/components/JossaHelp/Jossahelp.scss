@@ -4,6 +4,7 @@ $text-color: #555;
 $bg-color: #57c6bf;
 $card-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 $header-bg-image: url('../../assests/images/JosaaForm1.png');
+@import '../../assests/scss/global.scss';
 
 @keyframes slideInRight {
     from {
@@ -51,31 +52,29 @@ $header-bg-image: url('../../assests/images/JosaaForm1.png');
         }
 
         h2 {
-            font-family: "Poppins";
-            font-size: 50px;
-            font-weight: normal;
             font-style: normal;
             color: #ffffff;
+            
+            font-size: 50px;
+            @include popins-regular
         }
 
         h1 {
-            font-family: "Poppins";
-            font-size: 55px;
-            font-weight: 500;
             font-style: normal;
             text-align: center;
             color: #ffffff;
+
+            font-size: 55px;
+            @include popins-medium;
         }
 
         p {
             margin: 3rem 3rem 3rem 3rem;
-
-            font-family: "Poppins";
-            font-size: 28px;
-            font-weight: normal;
             font-style: normal;
             text-align: left;
             color: #333333;
+
+            @include popins-regular;
         }
 
         .top-left{
@@ -109,11 +108,12 @@ $header-bg-image: url('../../assests/images/JosaaForm1.png');
         }
 
         h3 {
-            font-family: "Poppins";
-            font-size: 40px;
-            font-weight: 500;
+           
             font-style: normal;
             color: #333333;
+
+            font-size: 40px;
+            @include popins-medium;
         }
 
         .help-card-container {
@@ -127,7 +127,6 @@ $header-bg-image: url('../../assests/images/JosaaForm1.png');
                 max-width: 650px;
                 box-shadow: $card-shadow;
                 border: 1px solid #a1a0a0;
-                // opacity: 0; 
                 transform: translateX(100%);
                 animation: slideInRight 0.5s ease forwards;
 
@@ -147,11 +146,11 @@ $header-bg-image: url('../../assests/images/JosaaForm1.png');
                     padding: 20px;
 
                     h4 {
-                        font-family: "Poppins";
-                        font-size: 40px;
-                        font-weight: 500;
                         font-style: normal;
                         color: #ffffff;
+                        
+                        font-size: 40px;
+                        @include popins-medium;
                     }
                 }
 
@@ -160,12 +159,12 @@ $header-bg-image: url('../../assests/images/JosaaForm1.png');
                         padding: 0px 2rem;
                         border-radius: 24px;
 
-                        font-family: "Poppins";
-                        font-size: 24px;
-                        font-weight: normal;
                         font-style: normal;
                         text-align: center;
                         color: #fafafa;
+                        
+                        font-size: 24px;
+                        @include popins-regular;
                     }
 
                     .help-card-image {

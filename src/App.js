@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Unauthorized from "./components/UnauthorizedPage/UnauthorizedPage";
 import ProtectedRoute from "./routes/ProtectedRoutes";
 import { useSelector } from "react-redux";
-import Student from "./Pages/Student/Student";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import Information from "./components/Information";
 import JossaHelp from "./components/JossaHelp";
@@ -37,7 +36,6 @@ function App() {
             <Route path="/Information" element={<Information />} />
             <Route path="/jossaHelp" element={<JossaHelp />} />
             <Route path="/mockJossaForm" element={<MockJossaForm />} />
-            <Route path="/Information" element={<Student />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/examdetails" element={<ExamsDetail />} />

@@ -1,7 +1,7 @@
 $primary-color: #3498db;
 $main-header-color: #343537;
 
-$red-color: #b3200d;
+$red-color: #B3200D;
 $blue-color: #0275be;
 
 $table-header-color: #a5a6a8;
@@ -24,4 +24,29 @@ $table-header-color: #a5a6a8;
     font-style: normal;
     text-align: left;
     color: #000000;
+}
+
+@mixin popins-medium {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+@mixin popins-semibold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+@mixin popins-regular {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+@mixin segoe-ui-semibold {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+@mixin poppins-light {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }

@@ -62,32 +62,35 @@ const NestedColTable = ({ header, data, isFilter, defaultActions }) => {
         <tbody>
           {filteredData.map((item, groupIndex) => (
             <React.Fragment key={groupIndex}>
-              <tr style={{ backgroundColor: groupColors[item.groupRow] }}>
+              <tr
+                style={{
+                  backgroundColor: groupIndex % 2 === 0 ? "#ffffff" : "rgba(0, 0, 0, 0.1)",
+                }}
+              >
                 <td rowSpan={item.events.length} className="group-cell">
                   {item.groupRow}
                 </td>
-                <td>{item.events[0].date}</td>
-                <td>{item.events[0].time}</td>
-                <td>{item.events[0].event}</td>
+                <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].date}</td>
+                <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].time}</td>
+                <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].event}</td>
                 {defaultActions && <td className="action-cell">
-                    {Object.values(defaultActions).map((action, index) => (
-                      <span key={index} className="action-btn">
-                        {action}
-                      </span>
-                    ))}
-                  </td>}
+                  {Object.values(defaultActions).map((action, index) => (
+                    <span key={index} className="action-btn">
+                      {action}
+                    </span>
+                  ))}
+                </td>}
               </tr>
               {item.events.slice(1).map((event, eventIndex) => (
                 <tr
                   key={eventIndex}
-                  style={{ 
-                    backgroundColor: groupColors[item.groupRow], 
-                    color: groupColors[item.groupRow], 
+                  style={{
+                    backgroundColor: groupIndex % 2 === 0 ? "#ffffff" : "rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  <td>{event.date}</td>
-                  <td>{event.time}</td>
-                  <td>{event.event}</td>
+                  <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{event.date}</td>
+                  <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{event.time}</td>
+                  <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{event.event}</td>
                   {defaultActions && <td className="action-cell">
                     {Object.values(defaultActions).map((action, index) => (
                       <span key={index} className="action-btn">

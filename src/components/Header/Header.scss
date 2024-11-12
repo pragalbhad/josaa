@@ -1,4 +1,16 @@
+@import '../../assests/scss/global.scss';
+
 .header-container {
+    transition: all 0.3s ease;
+  
+    &.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: white; // Or any color you prefer
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
     .header-row-one {
         padding: 20px 0px;
 
@@ -28,21 +40,21 @@
 
                 .user-name {
                     color: #1B1C1E;
-                    font-family: "DM Sans";
-                    font-size: 12px;
-                    font-style: normal;
-                    font-weight: 400;
                     line-height: normal;
+
+                    @include popins-regular;
+                    font-size: 20px;
                 }
 
                 .user-email {
                     color: #1B1C1E;
-                    font-family: "DM Sans";
-                    font-size: 12px;
+                    
                     font-style: normal;
-                    font-weight: 400;
                     line-height: normal;
                     opacity: 0.5;
+
+                    @include poppins-light;
+                    font-size: 14px;
                 }
             }
         }

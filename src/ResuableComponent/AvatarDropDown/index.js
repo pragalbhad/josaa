@@ -12,14 +12,13 @@ function AvatarDropdown({ menuOptions, onOptionSelect, onClick }) {
     <Dropdown
       show={showMenu}
       onToggle={() => setShowMenu(!showMenu)}
-      align="end" // Aligns to the bottom-left when the dropdown is open
+      align="end" 
     >
-      {/* Custom div as the dropdown toggle to avoid default arrow */}
       <div
         onClick={toggleMenu}
         style={{
-          backgroundColor: '#0078D4', // Blue background color
-          borderRadius: '50%', // Circle shape
+          backgroundColor: '#0078D4', 
+          borderRadius: '50%',
           width: '40px',
           height: '40px',
           display: 'flex',
@@ -33,20 +32,20 @@ function AvatarDropdown({ menuOptions, onOptionSelect, onClick }) {
 
       <Dropdown.Menu
         className="custom-dropdown-menu"
-        align="end" // Ensures dropdown aligns to the left
+        align="end" 
       >
         {menuOptions.map((option, index) => (
           <div
             key={index}
             onClick={() => {
               onOptionSelect(option);
-              setShowMenu(false); // Close menu on select
+              setShowMenu(false); 
             }}
             href={option.link || '#'}
             className="d-flex flex-row gap-3 align-center px-4 avatar-drop-down-item"
           >
             <div className='avatar-drop-down-icon'>{option.startIcon}</div>
-            <div>{option.label}</div>
+            <div className='dropdown-label'>{option.label}</div>
           </div>
         ))}
       </Dropdown.Menu>

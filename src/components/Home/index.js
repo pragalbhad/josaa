@@ -165,9 +165,7 @@ const Home = () => {
                     JoSAAHelp.in is your trusted companion. Click to explore
                     more!
                   </p>
-                  <a href="/" className="read-more">
-                    Read More
-                  </a>
+                 
                 </div>
               </Col>
 
@@ -184,9 +182,7 @@ const Home = () => {
                     information about the JoSAA counselling process. Click to
                     access vital resources and stay ahead of the curve.
                   </p>
-                  <a href="/" className="read-more">
-                    Read More
-                  </a>
+                 
                 </div>
               </Col>
               {/* <Col md={7} className="news-card">
