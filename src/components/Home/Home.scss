@@ -28,25 +28,24 @@
 
         .announcement-label {
             background-color: $red-color;
-            padding: 0.2rem 0.5rem;
+            padding: 0.3rem 0.9rem;
             position: absolute;
             top: 20px;
             left: -10px;
 
-            font-size: 26px;
+            font-size: 22px;
             font-style: normal;
             text-align: left;
             color: #ffffff;
 
-            @include popins-medium;
+            @include popins-semibold;
         }
 
         .announcement-text {
-            @include popins-medium;
+            @include popins-regular;
 
             margin-top: 2.5rem;
-            font-size: 28px;
-            font-style: normal;
+            font-size: 20px;
             text-align: left;
             color: #333333;
         }
@@ -56,7 +55,7 @@
 
         h2 {
             @include popins-semibold;
-            font-size: 48px;
+            font-size: 34px;
 
             font-style: normal;
             text-align: left;
@@ -72,7 +71,7 @@
             color: #000000;
 
             @include popins-regular;
-            font-size: 30px;
+            font-size: 22px;
         }
 
         .know-more-btn {
@@ -89,7 +88,7 @@
             width: 100%;
 
             @include popins-regular;
-            font-size: 28px;
+            font-size: 24px;
 
 
             &:hover {
@@ -101,9 +100,10 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             height: 100%;
-            margin-top: 2rem;
+            // margin-top: 2rem;
             margin-left: 0px;
             width: 100%;
+            object-fit: fill;
 
             @media(min-width: 992px) {
                 margin-top: -20px;
@@ -115,7 +115,7 @@
 
     .section-title {
         margin-bottom: 1rem;
-        font-size: 44px;
+        font-size: 34px;
         font-style: normal;
         text-align: left;
         color: #0275be;
@@ -148,7 +148,7 @@
 
                     h4 {
                         @include popins-medium;
-                        font-size: 28px;
+                        font-size: 24px;
 
                         font-style: normal;
                         text-align: left;
@@ -179,7 +179,12 @@
 
                     li{
                         @include popins-regular;
-                        font-size: 32px;
+                        font-size: 20px;
+
+                        &:hover{
+                            color: #0275BE;
+                            cursor: pointer;
+                        }
                     }
 
                     h4 {
@@ -194,7 +199,7 @@
                         margin-bottom: 1rem;
 
                         @include poppins-light;
-                        font-size: 26px;
+                        font-size: 20px;
                     }
 
                     .read-more {
@@ -205,11 +210,12 @@
                         text-align: left;
                         color: #B3200D;
                         
-                        font-size: 32px;
+                        font-size: 24px;
                         @include popins-semibold;
 
                         &:hover {
                             text-decoration: underline;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -217,7 +223,7 @@
         }
 
         .jossa-help-flow-img {
-            margin-top: 4rem;
+            // margin-top: 4rem;
 
             @media(min-width: 992px) {
                 margin-top: 0px
@@ -246,6 +252,20 @@
             @include poppins-light;
             font-size: 32px;
             color: #cccccc; 
+        }
+    }
+}
+
+.modal-news{
+    padding: 1.5rem;
+
+    li{
+        @include popins-regular;
+        font-size: 20px;
+
+        &:hover{
+            color: #0275BE;
+            cursor: pointer;
         }
     }
 }

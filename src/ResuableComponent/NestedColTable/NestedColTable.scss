@@ -46,6 +46,7 @@
         
         font-size: 30px;
         @include popins-medium;
+        width: 10%;
 
         &:last-child {
           border-right: none;
@@ -67,7 +68,7 @@
         color: #333333;
 
         @include popins-medium;
-        font-size: 24px;
+        font-size: 22px;
 
         &:last-child {
           border-right: none;

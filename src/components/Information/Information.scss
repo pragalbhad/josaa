@@ -23,8 +23,8 @@
         text-align: left;
         color: #333333;
 
-        font-size: 50px;
-        @include popins-medium;
+        font-size: 34px;
+        @include popins-semibold;
     }
 
     .title-desc {
@@ -32,7 +32,7 @@
         text-align: left;
         color: #333333;
 
-        font-size: 28px;
+        font-size: 22px;
         @include popins-regular
     }
 
@@ -43,7 +43,7 @@
 
     .list-desc{
         @include popins-regular;
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .event-subtitle{

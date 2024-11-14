@@ -8,7 +8,6 @@ const FilterDropdown = ({ options, selected, onSelect }) => {
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
-    console.log('%cMyProject%cline:10%cisOpen', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(34, 8, 7);padding:3px;border-radius:2px', isOpen)
   };
   
 

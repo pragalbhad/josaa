@@ -79,7 +79,6 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('hogya validate')
       dispatch(
         loginUser(formData.email, formData.password, formData.rememberMe)
       );

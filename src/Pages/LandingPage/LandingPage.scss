@@ -8,13 +8,13 @@
 
         .title-text {
             word-wrap: break-word;
-            @include popins-medium;
-            font-size: 50px;
+            @include popins-semibold;
+            font-size: 34px;
         }
 
         .title-desc {
-            @include popins-regular;
-            font-size: 28px;
+            @include popins-medium;
+            font-size: 22px;
         }
 
         .college-recommendation-title-text {

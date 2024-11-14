@@ -9,7 +9,7 @@ const NestedColTable = ({ header, data, isFilter, defaultActions }) => {
   };
 
   const groupColors = useMemo(() => {
-    return data.reduce((colors, item, index) => {
+    return data?.reduce((colors, item, index) => {
       colors[item.groupRow] = generateRandomColor();
       return colors;
     }, {});
@@ -18,7 +18,7 @@ const NestedColTable = ({ header, data, isFilter, defaultActions }) => {
   const filteredData =
     selectedGroup === "All"
       ? data
-      : data.filter((item) => item.groupRow === selectedGroup);
+      : data?.filter((item) => item.groupRow === selectedGroup);
 
   return (
     <div className="table-container">
@@ -33,7 +33,7 @@ const NestedColTable = ({ header, data, isFilter, defaultActions }) => {
             <option className="text-truncate" value="All">
               All
             </option>
-            {data.map((item, index) => (
+            {data?.map((item, index) => (
               <option key={index} value={item.groupRow}>
                 {item.groupRow}
               </option>
@@ -60,19 +60,19 @@ const NestedColTable = ({ header, data, isFilter, defaultActions }) => {
           )}
         </thead>
         <tbody>
-          {filteredData.map((item, groupIndex) => (
+          {filteredData?.map((item, groupIndex) => (
             <React.Fragment key={groupIndex}>
               <tr
                 style={{
                   backgroundColor: groupIndex % 2 === 0 ? "#ffffff" : "rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <td rowSpan={item.events.length} className="group-cell">
+                <td rowSpan={item?.events?.length} className="group-cell">
                   {item.groupRow}
                 </td>
-                <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].date}</td>
-                <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].time}</td>
-                <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].event}</td>
+                <td style={{ borderBottom: item?.events?.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].date}</td>
+                <td style={{ borderBottom: item?.events?.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].time}</td>
+                <td style={{ borderBottom: item?.events?.length > 1 ? "1px solid #ccc" : "none"}}>{item.events[0].event}</td>
                 {defaultActions && <td className="action-cell">
                   {Object.values(defaultActions).map((action, index) => (
                     <span key={index} className="action-btn">
@@ -81,16 +81,16 @@ const NestedColTable = ({ header, data, isFilter, defaultActions }) => {
                   ))}
                 </td>}
               </tr>
-              {item.events.slice(1).map((event, eventIndex) => (
+              {item?.events?.slice(1).map((event, eventIndex) => (
                 <tr
                   key={eventIndex}
                   style={{
                     backgroundColor: groupIndex % 2 === 0 ? "#ffffff" : "rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{event.date}</td>
-                  <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{event.time}</td>
-                  <td style={{ borderBottom: item.events.length > 1 ? "1px solid #ccc" : "none"}}>{event.event}</td>
+                  <td style={{ borderBottom: item?.events?.length > 1 ? "1px solid #ccc" : "none"}}>{event.date}</td>
+                  <td style={{ borderBottom: item?.events?.length > 1 ? "1px solid #ccc" : "none"}}>{event.time}</td>
+                  <td style={{ borderBottom: item?.events?.length > 1 ? "1px solid #ccc" : "none"}}>{event.event}</td>
                   {defaultActions && <td className="action-cell">
                     {Object.values(defaultActions).map((action, index) => (
                       <span key={index} className="action-btn">

@@ -12,13 +12,13 @@ export const fetchNews = () => async (dispatch) => {
           Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
           'Content-Type': 'application/json'
         },
-        data: {
-          Institute: [{ id: "76" }],
-          AcademicProgramName: [{ id: "192" }, { id: "10" }],
-          Quota: [{ id: "2" }],
-          SeatType: [{ id: "13" }],
-          Gender: [{ id: "2" }]
-        }
+        // data: {
+        //   Institute: [{ id: "76" }],
+        //   AcademicProgramName: [{ id: "192" }, { id: "10" }],
+        //   Quota: [{ id: "2" }],
+        //   SeatType: [{ id: "13" }],
+        //   Gender: [{ id: "2" }]
+        // }
       }
     );
 

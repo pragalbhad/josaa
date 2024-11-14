@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import "./Home.scss";
-import Home1 from "../../assests/images/Home1.png";
+import Home1 from "../../assests/images/Home11.png";
 import JEEFlow from "../../assests/images/JEEFlow.png";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNews } from "../../redux/actions/newsAction";
 import { FaArrowRight } from "react-icons/fa";
 import { getCollegeTrends } from "../../redux/actions/collegeTrendsAction";
 import { getExams } from "../../redux/actions/getExamsAction";
+import { Link, useNavigate } from "react-router-dom";
+import CustomModal from "../../ResuableComponent/CustomModal";
 
 const scheduleData = [
   {
@@ -61,6 +63,8 @@ const Home = () => {
     (state) => state?.newsReducer
   );
 
+  const [viewMoreModal, setViewMoreModal] = useState(false)
+
   useEffect(() => {
     dispatch(fetchNews());
   }, []);
@@ -70,6 +74,20 @@ const Home = () => {
     dispatch(getExams());
   }, []);
 
+  const handleViewMore = () => {
+    setViewMoreModal(true)
+  }
+
+  const navigate = useNavigate();
+
+  const handleOpenInNewTab = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreModal = () =>{
+    setViewMoreModal(false)
+  }
+
   return (
     <Container className="home-section">
       <Row className="home-wrapper">
@@ -77,9 +95,9 @@ const Home = () => {
           <Card.Body>
             <span className="announcement-label">ANNOUNCEMENT</span>
             <p className="announcement-text">
-              Rankings HAVE BEEN ANNOUNCED! NOW IS THE PERFECT TIME TO DISCOVER
-              WHICH INSTITUTE AND ACADEMIC PROGRAM YOU COULD SECURE BASED ON
-              YOUR JEE MAINS 2024 RESULTS. SIGN UP TO LEARN MORE!
+              Rankings have been ANNOUNCED! Now is the perfect time to discover
+              which institute and academic program you could secure based on
+              your JEE MAINS 2024 results. sign up to learn more!
             </p>
           </Card.Body>
         </Card>
@@ -94,7 +112,7 @@ const Home = () => {
               admission, we're here to guide you every step of the way. Let's
               turn your aspirations into reality together!
             </p>
-            <Button variant="danger" className="know-more-btn">
+            <Button variant="danger" className="know-more-btn" onClick={() => navigate('/jossaHelp')}>
               Know More
             </Button>
           </Col>
@@ -108,7 +126,7 @@ const Home = () => {
         </Row>
 
         {/* Divider Section */}
-        <Row className="divider mt-4 mb-4">
+        <Row className="divider mt-0 mb-0">
           <span>Let's go</span>
         </Row>
 
@@ -121,32 +139,19 @@ const Home = () => {
               <Col md={12} className="news-card">
                 <div className="news-card-content">
                   <div>
+
                     {newsItems.data &&
                       newsItems.data
-                        .filter((i) => i.tag === "New")
+                        .slice(0, 3)
                         .map((i) => (
                           <ul key={i.id}>
-                            <li>
-                              {/* JEE (Mains) Session-2 will be conducted on
-                            <br />
-                            <span>4, 5, 6, 8, 9, April 2024</span> */}
+                            <li onClick={() => handleOpenInNewTab(i.link)}>
                               {i.title}
                             </li>
-
-                            {/* <li>
-                            JEE (Advanced) Exam to be conducted on
-                            <br />
-                            <span>20 April, 2024</span>
-                          </li> */}
-
-                            {/* <li>
-                            JEE (Mains) rank will be announced by
-                            <br />
-                            <span>26 May, 2024</span>
-                          </li> */}
                           </ul>
                         ))}
-                    <div className="read-more cursor-pointer">View More</div>
+
+                    <div className="read-more cursor-pointer" onClick={handleViewMore}>View More</div>
                   </div>
                 </div>
               </Col>
@@ -165,7 +170,6 @@ const Home = () => {
                     JoSAAHelp.in is your trusted companion. Click to explore
                     more!
                   </p>
-                 
                 </div>
               </Col>
 
@@ -182,7 +186,6 @@ const Home = () => {
                     information about the JoSAA counselling process. Click to
                     access vital resources and stay ahead of the curve.
                   </p>
-                 
                 </div>
               </Col>
               {/* <Col md={7} className="news-card">
@@ -205,13 +208,39 @@ const Home = () => {
                 src={JEEFlow}
                 alt="JoSAAHelpFlow"
                 className="welcome-image"
-                style={{ width: "100%", height: "100%" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
               />
             </Col>
           </Row>
         </Row>
-
       </Row>
+
+      {viewMoreModal &&
+        <CustomModal isOpen={viewMoreModal}
+          onClose={handleViewMoreModal}
+          title="News & Events"
+        //  subTitle
+        >
+          <Col md={12} className="news-card modal-news">
+            <div className="news-card-content">
+              <div>
+                {newsItems.data &&
+                  newsItems.data
+                    .map((i) => (
+                      <ul key={i.id}>
+                        <li onClick={() => handleOpenInNewTab(i.link)}>
+                          {i.title}
+                        </li>
+                      </ul>
+                    ))}
+
+              </div>
+            </div>
+          </Col>
+        </CustomModal>}
     </Container>
   );
 };

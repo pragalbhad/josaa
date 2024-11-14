@@ -178,13 +178,6 @@ const Information = () => {
   const { blogData, loadingStateForBlog } = useState(
     (state) => state?.blogReducer
   );
-  console.log(
-    "%cMyProject%cline:107%cblogData",
-    "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
-    "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
-    "color:#fff;background:rgb(56, 13, 49);padding:3px;border-radius:2px",
-    blogData
-  );
 
   useEffect(() => {
     dispatch(getBlog());

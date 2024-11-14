@@ -17,12 +17,42 @@ import { PiArrowFatUp, PiArrowFatUpBold } from "react-icons/pi";
 import { PiArrowFatDownBold } from "react-icons/pi";
 import { getCollegeTrends } from "../../redux/actions/collegeTrendsAction";
 import sharemockform from '../../assests/images/sharemockform.png';
+import { getRecommendations } from "../../redux/actions/getRecommendationAction";
+import GenericTable from "../../ResuableComponent/ScheduleTable/GenericTable";
+import GlobalLoader from "../../ResuableComponent/GloaderLoader";
 
 
 const MockJossaForm = () => {
-  const [examType, setExamType] = useState(0);
+  const dispatch = useDispatch();
+  const { instituteData, loadingStateForInstitute, error } = useSelector(
+    (state) => state.getInstituteNameReducer
+  );
 
-  const header = ["Choices", "Institute", "Program", "Actions"];
+  const { recommendedColleges, loadingStateForRecommendedColleges } = useSelector((state) => state.recommendedCollegeReducer);
+
+
+  const [examType, setExamType] = useState(0);
+  const [token, setToken] = useState('')
+
+  const header = [
+    {
+      label: "Choice",
+      dataMapping: ''
+    },
+    {
+      label: "Institute",
+      dataMapping: 'institute_name'
+    },
+    {
+      label: "Program",
+      dataMapping: 'academic_program_stream'
+    },
+    {
+      label: "Actions",
+      // dataMapping: 'state'
+    },
+  ];
+
   const scheduleData = [
     {
       groupRow: "Candidate Registration and Choice",
@@ -74,31 +104,30 @@ const MockJossaForm = () => {
     ),
   };
 
-  const dispatch = useDispatch();
-  const { instituteData, loadingStateForInstitute, error } = useSelector(
-    (state) => state.getInstituteNameReducer
-  );
 
-  const [token, setToken] = useState('')
-  useEffect(()=>{
+
+  useEffect(() => {
     setToken(localStorage.getItem("authToken"))
-  },[localStorage.getItem("authToken")])
+  }, [localStorage.getItem("authToken")])
 
   useEffect(() => {
     dispatch(getInstituteData());
-   
   }, [dispatch]);
 
-  useEffect(()=>{
-      dispatch(getCollegeTrends())
-  },[])
+  useEffect(() => {
+    dispatch(getCollegeTrends())
+  }, [])
+
+  useEffect(() => {
+    dispatch(getRecommendations())
+  }, [])
 
   return (
     <StudentLayout>
       <Container className="mock-jossa-form-container">
         <Row className="mock-jossa-form-header-container position-relative">
           <h1 className="title-text">Mock JoSAA Form</h1>
-          
+
           <div className="title-desc mt-3">
             Our Mock JoSAA Form serves as a valuable tool to assist you in
             filling and testing your choices before final submission on the
@@ -115,7 +144,7 @@ const MockJossaForm = () => {
             seat allocation.
           </div>
 
-          <img src={sharemockform} alt="sharemockform" className="share-svg position-absolute"/>
+          <img src={sharemockform} alt="sharemockform" className="share-svg position-absolute" />
         </Row>
 
         <Row className="jossa-help-tabel-title-container">
@@ -139,14 +168,16 @@ const MockJossaForm = () => {
             </div>
           </div>
           <div className="jossa-help-tabel-container mt-4">
-            <NestedColTable
-              data={scheduleData}
-              header={header}
+            <GenericTable
+              data={recommendedColleges?.data}
+              headers={header}
               defaultActions={defaultActions}
             />
           </div>
         </Row>
       </Container>
+
+      {loadingStateForRecommendedColleges && <GlobalLoader />}
     </StudentLayout>
   );
 };

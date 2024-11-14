@@ -52,6 +52,9 @@
     font-style: normal;
     text-align: left;
     color: #000000;
+
+    @include popins-semibold;
+
   }
 
   .sub-title {

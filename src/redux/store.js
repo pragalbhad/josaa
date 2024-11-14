@@ -10,6 +10,9 @@ import institutesReducer from './reducers/intitutesReducer';
 import blogReducer from './reducers/blogReducer';
 import getInstituteNameReducer from './reducers/getInstituteNameReducer';
 import getExamReducer from './reducers/getExamsReducer';
+import siteAccessLogReducer from './reducers/siteAccessLogReducer';
+import recommendationReducer from './reducers/getRecommendationReducer';
+import recommendedCollegeReducer from './reducers/getRecommendationCollegeAction';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -21,7 +24,10 @@ const rootReducer = combineReducers({
   institutesReducer: institutesReducer,
   blogReducer: blogReducer,
   getInstituteNameReducer: getInstituteNameReducer,
-  getExamReducer: getExamReducer
+  getExamReducer: getExamReducer,
+  siteAccessLogReducer: siteAccessLogReducer,
+  recommendationReducer: recommendationReducer,
+  recommendedCollegeReducer: recommendedCollegeReducer
 });
 
 const loggerMiddleware = store => next => action => {

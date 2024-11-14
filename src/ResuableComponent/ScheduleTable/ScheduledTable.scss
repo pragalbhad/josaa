@@ -25,6 +25,7 @@
       td {
         border-right: 1px solid rgb(204, 204, 204);
         padding: 20px;
+        font-size: 22px;
 
         &:last-child {
           border-right: none;
@@ -32,4 +33,39 @@
       }
     }
   }
+}
+
+.pagination-controls{
+  padding: 1rem;
+  // box-shadow: 0px 0px 10px 3px #CCC;
+  height: 0%;
+  width: 100%;
+  /* background: pink; */
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prev-btn{
+  padding: 20px 30px;
+  border: 1px solid #0275BE;
+  border-radius: 20px;
+  font-size: 24px;
+  background-color: #0275BE;
+  color: #fff;
+}
+
+.next-btn{
+  padding: 20px 30px;
+  border: 1px solid #0275BE;
+  border-radius: 20px;
+  font-size: 24px;
+  background-color: #0275BE;
+  color: #fff;
+}
+
+.disbale-pagination-btn{
+  opacity: 0.5;
+  cursor: not-allowed;
 }

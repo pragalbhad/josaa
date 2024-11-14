@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Tab.scss";
@@ -11,6 +11,32 @@ function TabNavbar({ tabs }) {
   const [activeTab, setActiveTab] = useState(null);
   const [selectedDropdownLabel, setSelectedDropdownLabel] = useState({}); // Store selected label per tab
   const [dropdownOpen, setDropdownOpen] = useState(null);
+
+  // Set active tab based on the current URL path
+  useEffect(() => {
+    const currentTab = tabs.find((tab) => {
+      if (tab.dropdown) {
+        return tab.dropdown.some((item) => item.link === location.pathname);
+      }
+      return tab.link === location.pathname;
+    });
+
+    if (currentTab) {
+      setActiveTab(currentTab.label);
+
+      if (currentTab.dropdown) {
+        const activeDropdownItem = currentTab.dropdown.find(
+          (item) => item.link === location.pathname
+        );
+        setSelectedDropdownLabel((prev) => ({
+          ...prev,
+          [currentTab.label]: activeDropdownItem ? activeDropdownItem.label : null,
+        }));
+      }
+    } else {
+      setActiveTab(null);
+    }
+  }, [location, tabs]);
 
   const handleNavigation = (link, tabLabel, itemLabel = null) => {
     navigate(link);
