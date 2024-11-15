@@ -17,36 +17,37 @@ import {
 import "./Header.scss";
 import GlobalLoader from "../../ResuableComponent/GloaderLoader";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../../redux/actions/registerAction";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isSticky, setIsSticky] = useState(false); // New state for sticky header
-  const isSignUpModalOpen = useSelector(
-    (state) => state.buttonReducer.isSignUpModalOpen
-  );
+  const [isSticky, setIsSticky] = useState(false); 
+  const [token, setToken] = useState(null);
+
   const signInData = useSelector((state) => state.register.signInData);
 
-  const { profile, loadingStateForGetProfile, error } = useSelector(
+  const { profile, loadingStateForGetProfile } = useSelector(
     (state) => state.getProfile
   );
-  const [token, setToken] = useState(null);
+
+  const isLogIn = useSelector(( state)=> state.register )
 
   useEffect(() => {
     setToken(localStorage.getItem("authToken"));
-  }, [localStorage.getItem("authToken")]);
+  }, [localStorage.getItem("authToken"), isLogIn]);
 
   useEffect(() => {
-    if (token || signInData) {
+    if (token) {
       setIsAuthenticated(true);
     }
-  }, [signInData, token]);
+  }, [signInData, token, isLogIn]);
 
   useEffect(() => {
     dispatch(getProfile());
-  }, [dispatch, token]);
+  }, [token, isAuthenticated, isLogIn]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +63,11 @@ const Header = () => {
   }, []);
 
   const handleOptionSelect = (option) => {
-    navigate(`${option.link}`);
+    if(option.link === '/logout'){
+      dispatch(logout())
+    }else{
+      navigate(`${option.link}`);
+    }
   };
 
   const handleOpen = () => {

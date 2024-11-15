@@ -70,7 +70,7 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
 
                     .add-institute-btn {
                         border: none;
-                        padding: 0rem 2rem;
+                        padding: 1rem 2rem;
                         font-style: normal;
                         text-align: left;
                         color: #ffffff;
@@ -81,6 +81,7 @@ $header-bg-image: url('https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdA
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                         font-weight: 600;
                         background: #B3200D;
+                        border: 1px solid #B3200D;
 
                         &:hover {
                             color: $primary-btn-color;

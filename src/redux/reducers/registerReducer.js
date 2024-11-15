@@ -10,7 +10,7 @@ const initialState = {
   signInData: null,
   errorForSignIn: null,
 
-  isAuthenticated: false,
+  isLogIn: false,
 };
 
 const registrationReducer = (state = initialState, action) => {
@@ -40,6 +40,7 @@ const registrationReducer = (state = initialState, action) => {
         loadingStateForSignIn: false,
         data: action.payload,
         error: null,
+        isLogIn: true
       };
     case LOGIN_FAILURE:
       return {
@@ -47,12 +48,13 @@ const registrationReducer = (state = initialState, action) => {
         loadingStateForSignIn: false,
         data: null,
         error: action.payload,
+        isLogIn: false
       };
     case LOGOUT:
       return {
         ...state,
-        isAuthenticated: false,
-        user: null, // Clears user data on logout
+        isLogIn: false,
+        data: null, 
       };
     default:
       return state;

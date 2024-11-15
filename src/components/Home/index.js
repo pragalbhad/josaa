@@ -176,7 +176,7 @@ const Home = () => {
               <Col md={12} className="news-card">
                 <div className="news-card-header d-flex justify-content-between">
                   <h4>JoSAA Information</h4>
-                  <div className="right-chevron">
+                  <div className="right-chevron" onClick={()=>navigate('/information')}>
                     <FaArrowRight />
                   </div>
                 </div>
@@ -188,19 +188,7 @@ const Home = () => {
                   </p>
                 </div>
               </Col>
-              {/* <Col md={7} className="news-card">
-            <div className="news-card-content">
-              <h4>JoSAA Information</h4>
-              <p>
-                Stay updated with the latest insights, tips, and essential
-                information about the JoSAA counselling process. Click to access
-                vital resources and stay ahead of the curve.
-              </p>
-              <a href="/" className="read-more">
-                Read More
-              </a>
-            </div>
-          </Col> */}
+            
             </Col>
 
             <Col lg={7} className="jossa-help-flow-img">
@@ -222,7 +210,6 @@ const Home = () => {
         <CustomModal isOpen={viewMoreModal}
           onClose={handleViewMoreModal}
           title="News & Events"
-        //  subTitle
         >
           <Col md={12} className="news-card modal-news">
             <div className="news-card-content">

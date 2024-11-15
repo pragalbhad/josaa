@@ -1,6 +1,7 @@
 @import '../../assests/scss/global.scss';
 
 .landing-page-container {
+    margin: 3rem auto !important;
     gap: 24px;
 
     .college-recommendation-wrapper {
@@ -13,7 +14,7 @@
         }
 
         .title-desc {
-            @include popins-medium;
+            @include popins-regular;
             font-size: 22px;
         }
 

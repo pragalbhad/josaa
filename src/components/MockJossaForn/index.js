@@ -29,6 +29,7 @@ const MockJossaForm = () => {
   );
 
   const { recommendedColleges, loadingStateForRecommendedColleges } = useSelector((state) => state.recommendedCollegeReducer);
+  const { isLogIn } = useSelector((state) => state.register);
 
 
   const [examType, setExamType] = useState(0);
@@ -108,19 +109,19 @@ const MockJossaForm = () => {
 
   useEffect(() => {
     setToken(localStorage.getItem("authToken"))
-  }, [localStorage.getItem("authToken")])
+  }, [localStorage.getItem("authToken"), isLogIn])
 
   useEffect(() => {
     dispatch(getInstituteData());
-  }, [dispatch]);
+  }, [dispatch, isLogIn]);
 
   useEffect(() => {
     dispatch(getCollegeTrends())
-  }, [])
+  }, [isLogIn])
 
   useEffect(() => {
     dispatch(getRecommendations())
-  }, [])
+  }, [isLogIn])
 
   return (
     <StudentLayout>
