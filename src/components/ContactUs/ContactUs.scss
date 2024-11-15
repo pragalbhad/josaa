@@ -1,5 +1,8 @@
+@import '../../assests/scss/global.scss';
+
 .contact-us {
     padding: 2rem 1rem;
+    height: 100vh;
 
     .chat-box {
         padding: 1.5rem;
@@ -121,6 +124,35 @@
             right: 1%;
             color: #ffffff;
 
+        }
+    }
+
+    .contact-us-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 75%;
+        text-align: center;
+
+        .contect-us-text {
+            font-size: 34px;
+            @include popins-medium
+        }
+
+        .query-text {
+            font-size: 22px;
+            @include popins-regular;
+
+            .email-link{
+                color: #333333;
+                text-decoration: none;
+
+                &:hover{
+                    color: #0275be;
+                }
+            }
         }
     }
 }

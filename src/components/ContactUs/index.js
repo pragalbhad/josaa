@@ -9,7 +9,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 function ContactUs() {
   return (
     <Container className="contact-us">
-      <Row className="justify-content-center">
+      {/* <Row className="justify-content-center">
         <Col lg={12}>
           <div className="chat-box">
             <div className="user-message d-flex justify-content-between">
@@ -79,6 +79,14 @@ function ContactUs() {
             <textarea placeholder="Enter your query" />
             <span className="query-share-svg position-absolute"><RiSendPlaneFill /></span>
         </div>
+      </Row> */}
+
+      <Row className="contact-us-container">
+        <div className="contect-us-text">Contact Us</div>
+        <div className="query-text">For any queries, please email us at &nbsp;
+          <a href="mailto:admin@josaahelp.in" className="email-link">
+            admin@josaahelp.in
+          </a>.</div>
       </Row>
     </Container>
   );
